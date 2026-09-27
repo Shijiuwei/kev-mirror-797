@@ -1,0 +1,5 @@
+title: "kev-mirror-797"
+description: "High availability mirror and network topology specifications for jaredpalmer/kev"
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-relative-links
