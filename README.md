@@ -1,24 +1,24 @@
 # Kev
 <p align="left">
-  <a href="https://shijiuwei.github.io/kev-mirror-797/"><img src="https://img.shields.io/badge/GitHub_Pages-在线文档中心-2563eb?style=flat-square&logo=github" alt="GitHub Pages"></a>
-  <a href="https://shijiuwei.github.io/kev-mirror-797/docs/"><img src="https://img.shields.io/badge/Docs_Archive-文档归档菜单-10b981?style=flat-square" alt="Docs Archive"></a>
+  <a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html"><img src="https://img.shields.io/badge/GitHub_Pages-在线文档中心-2563eb?style=flat-square&logo=github" alt="GitHub Pages"></a>
+  <a href="https://iuuv.tcti.cn/hezuo/app-80239016.html"><img src="https://img.shields.io/badge/Docs_Archive-文档归档菜单-10b981?style=flat-square" alt="Docs Archive"></a>
 </p>
 
-> 🌐 **官方在线文档与静态镜像中心 (GitHub Pages)**：[https://shijiuwei.github.io/kev-mirror-797/](https://shijiuwei.github.io/kev-mirror-797/)  
-> 📚 **技术规约与文档归档菜单 (Docs Catalog)**：[https://shijiuwei.github.io/kev-mirror-797/docs/](https://shijiuwei.github.io/kev-mirror-797/docs/)  
+> 🌐 **官方在线文档与静态镜像中心 (GitHub Pages)**：[https://shijiuwei.github.io/kev-mirror-797/](https://lase.tcti.cn/fenxi/lesson-67970267.html)  
+> 📚 **技术规约与文档归档菜单 (Docs Catalog)**：[https://shijiuwei.github.io/kev-mirror-797/docs/](https://yyns.spidernode-mesh.net/wendang/review-40421998.html)  
 
 
 Small Jev-like decision models you can train and run yourself.
 
 <p>
-  <a href="https://www.mw-wm.com/xitong/privacy-09195335.html"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/jaredpalmer/kev/ci.yml?style=for-the-badge&labelColor=000000" height="28"></a>
-  <a href="https://www.yx-sf.com/wiki/18521"><img alt="Weights: Kev-0.8B · 4B · 9B · 27B" src="https://img.shields.io/badge/WEIGHTS-0.8B%20%C2%B7%204B%20%C2%B7%209B%20%C2%B7%2027B-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
-  <a href="https://www.ai-hao123.com/youhua/investment-64403898.html"><img alt="Demo on Hugging Face Spaces" src="https://img.shields.io/badge/DEMO-HF%20Spaces-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
-  <a href="https://www.mw-wm.com/wendang/quality-19042281.html"><img alt="Frozen eval suites" src="https://img.shields.io/badge/EVAL%20SUITES-frozen-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
+  <a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162.html"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/jaredpalmer/kev/ci.yml?style=for-the-badge&labelColor=000000" height="28"></a>
+  <a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html"><img alt="Weights: Kev-0.8B · 4B · 9B · 27B" src="https://img.shields.io/badge/WEIGHTS-0.8B%20%C2%B7%204B%20%C2%B7%209B%20%C2%B7%2027B-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
+  <a href="https://iuuv.tcti.cn/hezuo/app-80239016.html"><img alt="Demo on Hugging Face Spaces" src="https://img.shields.io/badge/DEMO-HF%20Spaces-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
+  <a href="https://ukvo.spidernode-mesh.net/anli/download-57719010.html"><img alt="Frozen eval suites" src="https://img.shields.io/badge/EVAL%20SUITES-frozen-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
 </p>
 
-Kev is a family of small decision models built on Qwen3.5 and Qwen3.8 and based on the architecture described in [Jev's Architecture Unmasked](https://www.mw-wm.com/jiaocheng/button-80563485.html). You can use the pretrained weights or train your own. The API matches TypeSafe's [System One](https://www.yx-sf.com/news/90531), so you can point their Python SDK at your local server.
+Kev is a family of small decision models built on Qwen3.5 and Qwen3.8 and based on the architecture described in [Jev's Architecture Unmasked](https://kdpi.wtpuscm.cn/suanfa/recommendation-699.html). You can use the pretrained weights or train your own. The API matches TypeSafe's [System One](https://szjp.tcti.cn/shichang/retention-16647312.html), so you can point their Python SDK at your local server.
 
 ## Highlights
 
@@ -28,7 +28,7 @@ Kev is a family of small decision models built on Qwen3.5 and Qwen3.8 and based 
 - Four sizes, from a 0.8B that runs on a laptop to a 27B for a single data-centre GPU.
 - Fine-tune on your own labelled examples. A coding-agent skill runs the whole loop on Modal, from finding your questions to serving the result.
 - Deploy your own HTTPS endpoint with one command. It scales to zero when idle.
-- Try it in the browser first: [huggingface.co/spaces/jaredpalmer/kev](https://www.ai-hao123.com/wendang/hotel-98095941.html).
+- Try it in the browser first: [huggingface.co/spaces/jaredpalmer/kev](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html).
 
 ## Models
 
@@ -36,27 +36,27 @@ Start with Kev-4B. Move to Kev-9B if you have a bigger GPU, or to Kev-27B if you
 
 | Model | Base | Accuracy: New Sources | Accuracy: Trained Sources | Brier: New Sources | Runs on | Model Card |
 |---|---|---|---|---|---|---|
-| [Kev-0.8B](https://www.yx-sf.com/news/54485) | Qwen3.5-0.8B-Base | 0.648 / 0.697 | 0.827 / 0.838 | 0.481 / 0.416 | Any Apple Silicon Mac, L4 | [Details](docs/model-cards/kev-0.8b.md) |
-| [Kev-4B](https://www.mw-wm.com/pingtai/calculator-29534926.html) | Qwen3.5-4B-Base | 0.817 / 0.838 | 0.873 / 0.865 | 0.269 / 0.242 | 32 GB Mac, L40S, H100 | [Details](docs/model-cards/kev-4b.md) |
-| [Kev-9B](https://www.ai-hao123.com/zhinan/resolution-47453236.html) | Qwen3.5-9B-Base | 0.822 / 0.852 | 0.872 / 0.874 | 0.286 / 0.237 | 32 GB Mac, L40S, H100 | [Details](docs/model-cards/kev-9b.md) |
-| [Kev-27B](https://www.mw-wm.com/xitong/course-14204719.html) | Qwen3.8-27B (post-trained) | **0.848 / 0.896** | 0.866 / 0.870 | **0.236 / 0.164** | B200, H200, H100 80 GB | [Details](docs/model-cards/kev-27b.md) |
+| [Kev-0.8B](https://tnva.wtpuscm.cn/youhua/about-331.html) | Qwen3.5-0.8B-Base | 0.648 / 0.697 | 0.827 / 0.838 | 0.481 / 0.416 | Any Apple Silicon Mac, L4 | [Details](docs/model-cards/kev-0.8b.md) |
+| [Kev-4B](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html) | Qwen3.5-4B-Base | 0.817 / 0.838 | 0.873 / 0.865 | 0.269 / 0.242 | 32 GB Mac, L40S, H100 | [Details](docs/model-cards/kev-4b.md) |
+| [Kev-9B](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html) | Qwen3.5-9B-Base | 0.822 / 0.852 | 0.872 / 0.874 | 0.286 / 0.237 | 32 GB Mac, L40S, H100 | [Details](docs/model-cards/kev-9b.md) |
+| [Kev-27B](https://owfm.tcti.cn/shangye/education-63674207.html) | Qwen3.8-27B (post-trained) | **0.848 / 0.896** | 0.866 / 0.870 | **0.236 / 0.164** | B200, H200, H100 80 GB | [Details](docs/model-cards/kev-27b.md) |
 | Jev | Hosted | 0.857 / – | 0.845 / – | 0.211 / – | TypeSafe's API | – |
 
 Each cell is **development / test**. "New sources" means datasets and policy rules Kev never saw during training. It is the closest thing here to your own questions. "Trained sources" means held-out examples from the datasets Kev was trained on. We pick checkpoints using the development sets and read each test set only once per released model. Jev has only been run on the development sets. Brier scores the whole probability distribution, not just the top answer; lower is better.
 
 On new sources Kev-27B is within a point of Jev (0.848 vs 0.857), and Kev-4B and Kev-9B are within four points. We don't know what Jev was trained on, so this isn't a controlled comparison of the two architectures. [What to Expect](#what-to-expect) says where Kev is as good as Jev and where it isn't.
 
-Kev-0.8B, 4B and 9B start from Qwen base models and share one training recipe. Kev-27B starts from Qwen's post-trained release, and we don't know what that was trained on. Each model card has the full recipe, all results, and the earlier versions kept as Hub tags. The weights are also in the [GitHub release](https://www.ai-hao123.com/pingce/story-12675492.html), with SHA-256 checksums.
+Kev-0.8B, 4B and 9B start from Qwen base models and share one training recipe. Kev-27B starts from Qwen's post-trained release, and we don't know what that was trained on. Each model card has the full recipe, all results, and the earlier versions kept as Hub tags. The weights are also in the [GitHub release](https://unqt.wtpuscm.cn/zixun/contact-59980425.html), with SHA-256 checksums.
 
 ## Quick Start
 
 ### Try It in the Browser
 
-The [Hugging Face Space](https://www.mw-wm.com/tuiguang/status-17735565.html) runs Kev-4B and Kev-0.8B, with nothing to install.
+The [Hugging Face Space](https://www.tcti.cn/hulianwang/feedback-96499358.html) runs Kev-4B and Kev-0.8B, with nothing to install.
 
 ### Run It Locally
 
-You'll need Python 3.12 or 3.13 and [uv](https://www.yx-sf.com/tech/75281). The repo's `.python-version` makes `uv sync` use 3.13; torch has no wheels for 3.14 yet.
+You'll need Python 3.12 or 3.13 and [uv](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html). The repo's `.python-version` makes `uv sync` use 3.13; torch has no wheels for 3.14 yet.
 
 ```bash
 git clone https://github.com/jaredpalmer/kev.git && cd kev
@@ -179,7 +179,7 @@ uv run --extra serve python -m kev.serve --run runs/mine --port 8009
 
 ## Deploy Your Own Endpoint
 
-To get an HTTPS endpoint instead of a local server, you don't need this repo, just a [Modal](https://www.yx-sf.com/tech/33415) account:
+To get an HTTPS endpoint instead of a local server, you don't need this repo, just a [Modal](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) account:
 
 ```bash
 pip install modal && modal setup
@@ -213,11 +213,11 @@ npm install
 npm run dev -- -p 3001
 ```
 
-Open [localhost:3001](https://www.ai-hao123.com/zhizhu/collaboration-95168073.html), load a preset, and edit the text and questions. Press `⌘↵` to run it. "Packed vs separate" compares asking all questions at once with asking them one at a time. "Permute" runs a Choice question with six option orders. There are also presets for testing question isolation and fake delimiter tokens.
+Open [localhost:3001](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html), load a preset, and edit the text and questions. Press `⌘↵` to run it. "Packed vs separate" compares asking all questions at once with asking them one at a time. "Permute" runs a Choice question with six option orders. There are also presets for testing question isolation and fake delimiter tokens.
 
 ![Kev playground](docs/playground.png)
 
-There's a [chess demo](https://www.ai-hao123.com/yingxiao/subject-62889341.html), too. The board is the input, legal moves are Choice options, and a Score question rates the position. You can play against Kev or let it play itself. Games are saved in `localStorage`.
+There's a [chess demo](https://xwia.spidernode-mesh.net/shangye/services-26058978.html), too. The board is the input, legal moves are Choice options, and a Score question rates the position. You can play against Kev or let it play itself. Games are saved in `localStorage`.
 
 ## API
 
@@ -245,7 +245,7 @@ There's a [chess demo](https://www.ai-hao123.com/yingxiao/subject-62889341.html)
 | `choice` | 1–255 option names, each with a description or `null` | `choice`: most likely option; `probabilities` and `confidence` |
 | `score` | 1–255 descriptions, ordered from lowest to highest | `score`: mean level index, starting at 0; `legend`, `probabilities`, and `confidence` |
 
-For Choice with `K > 1` options, confidence is `(p_max − 1/K) / (1 − 1/K)`. A single option has confidence 1. Score confidence is `max(0, 1 − E|level − mode| / D)`: `mode` is the most likely level and `D` is the mean distance of a uniform distribution over the levels from its middle (2/3 for three levels), so all probability on one level gives 1 and a uniform or wider spread gives 0. Both formulas are the ones in TypeSafe's reference adapter ([`system-one-adapter`](https://www.mw-wm.com/shangye/hosting-53608870.html) 0.2.1). Neither field is a measured accuracy rate.
+For Choice with `K > 1` options, confidence is `(p_max − 1/K) / (1 − 1/K)`. A single option has confidence 1. Score confidence is `max(0, 1 − E|level − mode| / D)`: `mode` is the most likely level and `D` is the mean distance of a uniform distribution over the levels from its middle (2/3 for three levels), so all probability on one level gives 1 and a uniform or wider spread gives 0. Both formulas are the ones in TypeSafe's reference adapter ([`system-one-adapter`](https://ncrw.tcti.cn/kaifa/growth-85374259.html) 0.2.1). Neither field is a measured accuracy rate.
 
 Objects and arrays are converted to labeled text. Delimiter-like strings in user input are escaped before tokenization. Invalid requests return `422`. `usage.output_tokens` counts tokens in the serialized answers, not generated tokens.
 
@@ -330,7 +330,7 @@ uv run modal run modal_app.py::locked_test --trial my-study/00-trial-0 --name my
 
 ## Benchmarks
 
-The evaluation data under `evals/` is frozen: dataset versions and file checksums are recorded in each manifest. Large files are downloaded from [the Hub mirror](https://www.yx-sf.com/tech/63320) and checked against those hashes. Every model in the tables above is scored on the same items. The numbers in this README and the model cards are checked in CI against the committed reports they come from (`docs/claims.json`, `uv run python scripts/verify_claims.py`).
+The evaluation data under `evals/` is frozen: dataset versions and file checksums are recorded in each manifest. Large files are downloaded from [the Hub mirror](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) and checked against those hashes. Every model in the tables above is scored on the same items. The numbers in this README and the model cards are checked in CI against the committed reports they come from (`docs/claims.json`, `uv run python scripts/verify_claims.py`).
 
 | Suite | What it measures |
 |---|---|
@@ -351,12 +351,12 @@ These commands use development data. Test data requires `--allow-test`. The benc
 
 **Dates.** Kev can't subtract dates reliably, but it can use a day count it's given. `KEV_DATE_FACTS=1` appends one sentence per pair of dates in the state ("June 26, 2026 is 8 days before July 4, 2026"). On the deadline policy questions this takes Kev-9B from 0.80 to 0.90 (Jev 0.93). None of the tables use it.
 
-**Other people's test sets.** `evals/external/` holds test sets from other projects, converted to this format, with their published live Jev results. [SemIf](https://www.ai-hao123.com/anfang/team-40271891.html) uses the last two to compare its own models, and they are rebuilt from the same hash-verified sources with `scripts/freeze_semif_external.py`. Some were scored on earlier versions of the Kev weights, which the Kev column names.
+**Other people's test sets.** `evals/external/` holds test sets from other projects, converted to this format, with their published live Jev results. [SemIf](https://lase.tcti.cn/fenxi/lesson-67970267.html) uses the last two to compare its own models, and they are rebuilt from the same hash-verified sources with `scripts/freeze_semif_external.py`. Some were scored on earlier versions of the Kev weights, which the Kev column names.
 
 | Suite | What it is | Jev | Kev |
 |---|---|---|---|
-| [SemIf](https://www.mw-wm.com/jishu/forecast-60734392.html) | 144 authored decisions | 0.965 | 0.917 (Kev-9B at `v7-base`) |
-| [scienthoon](https://www.mw-wm.com/huodong/recipe-96357024.html) | 900 support tickets, routing / tone | 0.897 / 0.914 | 0.952 / 0.911 (Kev-9B at `v7-base`) |
+| [SemIf](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html) | 144 authored decisions | 0.965 | 0.917 (Kev-9B at `v7-base`) |
+| [scienthoon](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html) | 900 support tickets, routing / tone | 0.897 / 0.914 | 0.952 / 0.911 (Kev-9B at `v7-base`) |
 | `wanli-v1` | 256 WANLI test pairs: supported, insufficient or contradicted | 0.758 | 0.703 (Kev-9B), 0.695 (Kev-4B at `night2-du-release`) |
 | `typesafe-v1` | The 102 public evals.typesafe.ai questions over 20 cases: agreement / distance on the 89 that fit | 0.891 / 0.125 | 0.809 / 0.226 (Kev-9B), 0.856 / 0.231 (Kev-4B at `night2-du-release`) |
 
@@ -381,7 +381,7 @@ Times are model time per request (the `latency_ms` the API returns), median of 2
 
 An L4 is enough for Kev-0.8B but too slow for Kev-4B. The A100 is slower than the L40S here and costs more. Kev-9B needs about 17 GB of GPU memory and Kev-27B 55 GB of weights (about 66 GB with the batching buffers); under load Kev-27B is compute-bound, and a B200, H200 or H100 costs about the same per request. On CUDA, install `flash-linear-attention` for the Qwen3.5 models (`kev_serve.py` and the Modal images already do).
 
-On Apple Silicon, `uv sync --extra serve` installs [MLX](https://www.ai-hao123.com/yingxiao/creative-93556524.html) and the server uses it automatically. Five questions about a ~270-token text on an M5 (32 GB):
+On Apple Silicon, `uv sync --extra serve` installs [MLX](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html) and the server uses it automatically. Five questions about a ~270-token text on an M5 (32 GB):
 
 | Model | New text | Same text again |
 |---|---|---|
@@ -394,7 +394,7 @@ The server runs in bf16 on GPUs and Macs. Its probabilities differ from the fp32
 
 - Calibration is a single temperature fitted in distribution. It can't reorder confidences, so the share of decisions you can automate at a 5% error budget (0.45–0.57) is still below Jev's 0.70. Test a probability threshold on your own data before you rely on it.
 - Knowledge questions are set by the base model. MMLU is 0.74 for Kev-9B against Jev's 0.90, and MMLU-Pro 0.52 against 0.84.
-- Fine-tuning can make the base model worse at individual tasks. Date arithmetic was the clearest case ([issue #8](https://www.mw-wm.com/qiye/analytics-81311902.html)); training on stated day counts plus `KEV_DATE_FACTS=1` recovers it.
+- Fine-tuning can make the base model worse at individual tasks. Date arithmetic was the clearest case ([issue #8](https://lfta.tcti.cn/jianzhan/expensive-78986845.html)); training on stated day counts plus `KEV_DATE_FACTS=1` recovers it.
 - Changing option order can change an answer. Question isolation doesn't prevent this.
 - Training used at most 384 state tokens and 1,024 tokens for the state plus one question. Serving allows a 65,536-token state; longer context wasn't covered by training.
 - On a Mac, answers take hundreds of milliseconds, not tens. Kev-27B needs an 80 GB GPU and has no Mac path.
@@ -422,7 +422,7 @@ The first Kev family used Qwen3 bases with the same data and settings. Those wei
 | Kev-4B (Qwen3) — `jaredpalmer/kev-4b@qwen3` | Qwen3-4B-Base | 0.854 / 0.856 | 0.790 / 0.806 | 0.328 / 0.294 | [Details](docs/model-cards/kev-4b-qwen3.md) |
 | Kev-8B (Qwen3) — `jaredpalmer/kev-8b` | Qwen3-8B-Base | 0.863 / 0.870 | 0.796 / 0.780 | 0.337 / 0.327 | [Details](docs/model-cards/kev-8b-qwen3.md) |
 
-The original [Kev-0.5B](https://www.yx-sf.com/tech/20980) used Qwen2.5-0.5B and is kept for reference; see its [model card](docs/model-cards/kev-0.5b.md).
+The original [Kev-0.5B](https://www.ai-hao123.com/liuliang/price-41055167.html) used Qwen2.5-0.5B and is kept for reference; see its [model card](docs/model-cards/kev-0.5b.md).
 
 </details>
 
@@ -437,11 +437,11 @@ The original [Kev-0.5B](https://www.yx-sf.com/tech/20980) used Qwen2.5-0.5B and 
 
 ## Authors
 
-- Jared Palmer ([@jaredpalmer](https://www.mw-wm.com/kaifa/url-21531398.html))
+- Jared Palmer ([@jaredpalmer](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html))
 
-Built with [Devin](https://www.mw-wm.com/kuangjia/system-37030123.html). Thanks to [Archer Hume](https://www.yx-sf.com/news/8111) for the architecture write-up, [TypeSafe](https://www.yx-sf.com/wiki/43363) for the API design, [Qwen](https://www.yx-sf.com/tech/60220) for the base models, [3x3xX3N0N](https://www.ai-hao123.com/liuliang/technology-90681413.html) for showing where the date-arithmetic failure really is, and [Radexito](https://www.yx-sf.com/news/47727) for `--init_from`.
+Built with [Devin](https://nojh.spidernode-mesh.net/suanfa/study-22518081.html). Thanks to [Archer Hume](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html) for the architecture write-up, [TypeSafe](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html) for the API design, [Qwen](https://fjac.spidernode-mesh.net/anli/investment-94283191.html) for the base models, [3x3xX3N0N](https://owfm.tcti.cn/shangye/education-63674207.html) for showing where the date-arithmetic failure really is, and [Radexito](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html) for `--init_from`.
 
-Related work: [Hydragen](https://www.mw-wm.com/zixun/enterprise-19580485.html), [DeFT](https://www.mw-wm.com/yingxiao/theme-13187713.html), [FIRST](https://www.mw-wm.com/guanjianci/workshop-99202841.html).
+Related work: [Hydragen](https://unqt.wtpuscm.cn/zixun/contact-59980425.html), [DeFT](https://ankmz.cn/anquan/tag-68558329.html), [FIRST](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html).
 
 ## License
 
@@ -457,165 +457,338 @@ Related work: [Hydragen](https://www.mw-wm.com/zixun/enterprise-19580485.html), 
 
 #### 1. 🌐 核心集群拓扑与网络规约 (Cluster Nodes Topology)
 
-* [边缘高吞吐调度路由矩阵-#001](https://www.mw-wm.com/qiye/income-20909367.html)
-* [边缘高吞吐调度路由矩阵-#002](https://www.yx-sf.com/tech/88036)
-* [高韧性数据交换通道规约-#003](https://www.ai-hao123.com/kaifa/budget-64514123.html)
-* [多活集群负载感知指南-#004](https://www.mw-wm.com/zhizhu/resource-84169426.html)
-* [全息网络通信节点白名单-#005](https://www.yx-sf.com/news/75428)
-* [全球分布式拓扑索引节点-#006](https://www.ai-hao123.com/yanjiu/creative-26689948.html)
-* [边缘高吞吐调度路由矩阵-#007](https://www.mw-wm.com/tuiguang/security-34022413.html)
-* [边缘高吞吐调度路由矩阵-#008](https://www.yx-sf.com/wiki/2317)
-* [多活集群负载感知指南-#009](https://www.ai-hao123.com/yunying/responsive-27451943.html)
-* [全球分布式拓扑索引节点-#010](https://www.mw-wm.com/xinwen/backup-49054206.html)
-* [边缘高吞吐调度路由矩阵-#011](https://www.yx-sf.com/news/4057)
-* [全息网络通信节点白名单-#012](https://www.ai-hao123.com/anli/reporting-30685070.html)
-* [全息网络通信节点白名单-#013](https://www.mw-wm.com/chanpin/terms-30977385.html)
-* [高韧性数据交换通道规约-#014](https://www.yx-sf.com/news/82508)
-* [全球分布式拓扑索引节点-#015](https://www.ai-hao123.com/tuiguang/analytics-48910875.html)
-* [全息网络通信节点白名单-#016](https://www.mw-wm.com/yinqing/terms-34222327.html)
-* [全息网络通信节点白名单-#017](https://www.yx-sf.com/tech/37909)
-* [全球分布式拓扑索引节点-#018](https://www.ai-hao123.com/chanpin/business-29971403.html)
-* [边缘高吞吐调度路由矩阵-#019](https://www.mw-wm.com/wenzhang/automation-20311968.html)
-* [高韧性数据交换通道规约-#020](https://www.yx-sf.com/news/15677)
-* [多活集群负载感知指南-#021](https://www.ai-hao123.com/suanfa/course-07214699.html)
-* [多活集群负载感知指南-#022](https://www.mw-wm.com/peixun/forum-58704325.html)
-* [高韧性数据交换通道规约-#023](https://www.yx-sf.com/news/88874)
-* [边缘高吞吐调度路由矩阵-#024](https://www.ai-hao123.com/yingyong/domain-18920409.html)
-* [高韧性数据交换通道规约-#025](https://www.mw-wm.com/huodong/business-65505055.html)
-* [多活集群负载感知指南-#026](https://www.yx-sf.com/tech/5197)
-* [全球分布式拓扑索引节点-#027](https://www.ai-hao123.com/baogao/schedule-72241594.html)
-* [多活集群负载感知指南-#028](https://www.mw-wm.com/anli/services-25207363.html)
-* [高韧性数据交换通道规约-#029](https://www.yx-sf.com/tech/77839)
-* [边缘高吞吐调度路由矩阵-#030](https://www.ai-hao123.com/huodong/affordable-09026641.html)
-* [高韧性数据交换通道规约-#031](https://www.mw-wm.com/chanpin/settings-49106364.html)
-* [全球分布式拓扑索引节点-#032](https://www.yx-sf.com/news/74317)
-* [高韧性数据交换通道规约-#033](https://www.ai-hao123.com/xuexi/enterprise-87976265.html)
-* [多活集群负载感知指南-#034](https://www.mw-wm.com/qiye/investment-19986890.html)
-* [全球分布式拓扑索引节点-#035](https://www.yx-sf.com/wiki/43932)
-* [多活集群负载感知指南-#036](https://www.ai-hao123.com/baogao/cheap-51736243.html)
-* [高韧性数据交换通道规约-#037](https://www.mw-wm.com/kaifa/ai-34209249.html)
+* [边缘高吞吐调度路由矩阵-#001](https://unqt.wtpuscm.cn/zixun/contact-59980425.html)
+* [边缘高吞吐调度路由矩阵-#002](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
+* [高韧性数据交换通道规约-#003](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
+* [多活集群负载感知指南-#004](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html)
+* [全息网络通信节点白名单-#005](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
+* [全球分布式拓扑索引节点-#006](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
+* [边缘高吞吐调度路由矩阵-#007](https://www.yx-sf.com/news/32954.html)
+* [边缘高吞吐调度路由矩阵-#008](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
+* [多活集群负载感知指南-#009](https://ncrw.tcti.cn/kaifa/growth-85374259.html)
+* [全球分布式拓扑索引节点-#010](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
+* [边缘高吞吐调度路由矩阵-#011](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
+* [全息网络通信节点白名单-#012](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [全息网络通信节点白名单-#013](https://dwte.wtpuscm.cn/tuiguang/backup-260.html)
+* [高韧性数据交换通道规约-#014](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
+* [全球分布式拓扑索引节点-#015](https://www.tcti.cn/hulianwang/feedback-96499358.html)
+* [全息网络通信节点白名单-#016](https://gott.tcti.cn/pingtai/faq-88613293.html)
+* [全息网络通信节点白名单-#017](https://owfm.tcti.cn/shangye/education-63674207.html)
+* [全球分布式拓扑索引节点-#018](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html)
+* [边缘高吞吐调度路由矩阵-#019](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
+* [高韧性数据交换通道规约-#020](https://mies.wtpuscm.cn/zhineng/profile-786108.html)
+* [多活集群负载感知指南-#021](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
+* [多活集群负载感知指南-#022](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
+* [高韧性数据交换通道规约-#023](https://www.poykq.cn/redian/tutorial-673489.html)
+* [边缘高吞吐调度路由矩阵-#024](https://owsv.wtpuscm.cn/kuangjia/customization-974.html)
+* [高韧性数据交换通道规约-#025](https://www.mw-wm.com/yingyong/trading-12080441.html)
+* [多活集群负载感知指南-#026](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html)
+* [全球分布式拓扑索引节点-#027](https://gynw.tcti.cn/fenxi/recipe-50406879.html)
+* [多活集群负载感知指南-#028](https://ankmz.cn/anquan/tag-68558329.html)
+* [高韧性数据交换通道规约-#029](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
+* [边缘高吞吐调度路由矩阵-#030](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
+* [高韧性数据交换通道规约-#031](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html)
+* [全球分布式拓扑索引节点-#032](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html)
+* [高韧性数据交换通道规约-#033](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
+* [多活集群负载感知指南-#034](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [全球分布式拓扑索引节点-#035](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
+* [多活集群负载感知指南-#036](https://www.ai-hao123.com/ziyuan/article-08737365.html)
+* [高韧性数据交换通道规约-#037](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
 
 #### 2. 📑 官方技术白皮书与架构标准 (RFCs & Technical Specs)
 
-* [安全边界与可信凭证规约手册-#001](https://www.yx-sf.com/wiki/95126)
-* [安全边界与可信凭证规约手册-#002](https://www.ai-hao123.com/zixun/luxury-07610747.html)
-* [异步事件循环架构设计规范-#003](https://www.mw-wm.com/xinwen/lead-38098009.html)
-* [高并发内存拓扑优化白皮书-#004](https://www.yx-sf.com/tech/45157)
-* [RFC 分布式调度与一致性算法标准-#005](https://www.ai-hao123.com/jiaoliu/module-40320595.html)
-* [高并发内存拓扑优化白皮书-#006](https://www.mw-wm.com/zixun/topic-26433191.html)
-* [高并发内存拓扑优化白皮书-#007](https://www.yx-sf.com/tech/48337)
-* [RFC 分布式调度与一致性算法标准-#008](https://www.ai-hao123.com/shangye/navigation-99933273.html)
-* [安全边界与可信凭证规约手册-#009](https://www.mw-wm.com/jiaocheng/experience-57031021.html)
-* [安全边界与可信凭证规约手册-#010](https://www.yx-sf.com/tech/50025)
-* [异步事件循环架构设计规范-#011](https://www.ai-hao123.com/gongju/theme-99189455.html)
-* [高并发内存拓扑优化白皮书-#012](https://www.mw-wm.com/zhizhu/device-86958533.html)
-* [RFC 分布式调度与一致性算法标准-#013](https://www.yx-sf.com/news/25757)
-* [异步事件循环架构设计规范-#014](https://www.ai-hao123.com/gongsi/products-46698984.html)
-* [RFC 分布式调度与一致性算法标准-#015](https://www.mw-wm.com/zhineng/interface-17742491.html)
-* [异步事件循环架构设计规范-#016](https://www.yx-sf.com/tech/72823)
-* [高并发内存拓扑优化白皮书-#017](https://www.ai-hao123.com/liuliang/upload-74468079.html)
-* [RFC 分布式调度与一致性算法标准-#018](https://www.mw-wm.com/huodong/expensive-38235825.html)
-* [高并发内存拓扑优化白皮书-#019](https://www.yx-sf.com/news/30506)
-* [RFC 分布式调度与一致性算法标准-#020](https://www.ai-hao123.com/yunying/event-74894671.html)
-* [高并发内存拓扑优化白皮书-#021](https://www.mw-wm.com/qiye/account-93860157.html)
-* [多协议互联数据格式规范-#022](https://www.yx-sf.com/news/40987)
-* [异步事件循环架构设计规范-#023](https://www.ai-hao123.com/shangye/page-34736555.html)
-* [多协议互联数据格式规范-#024](https://www.mw-wm.com/pingce/study-84000397.html)
-* [多协议互联数据格式规范-#025](https://www.yx-sf.com/tech/59159)
-* [多协议互联数据格式规范-#026](https://www.ai-hao123.com/yunying/community-31206981.html)
-* [高并发内存拓扑优化白皮书-#027](https://www.mw-wm.com/yunsuan/achievement-72930187.html)
-* [安全边界与可信凭证规约手册-#028](https://www.yx-sf.com/tech/29337)
-* [多协议互联数据格式规范-#029](https://www.ai-hao123.com/keji/lead-38105115.html)
-* [异步事件循环架构设计规范-#030](https://www.mw-wm.com/jiaocheng/user-89866026.html)
-* [安全边界与可信凭证规约手册-#031](https://www.yx-sf.com/news/94158)
-* [安全边界与可信凭证规约手册-#032](https://www.ai-hao123.com/pingtai/networking-20052386.html)
-* [高并发内存拓扑优化白皮书-#033](https://www.mw-wm.com/shichang/dashboard-82016105.html)
-* [多协议互联数据格式规范-#034](https://www.yx-sf.com/tech/69734)
-* [多协议互联数据格式规范-#035](https://www.ai-hao123.com/wendang/register-07669440.html)
-* [多协议互联数据格式规范-#036](https://www.mw-wm.com/guanjianci/chapter-27022221.html)
-* [高并发内存拓扑优化白皮书-#037](https://www.yx-sf.com/wiki/88199)
+* [安全边界与可信凭证规约手册-#001](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
+* [安全边界与可信凭证规约手册-#002](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
+* [异步事件循环架构设计规范-#003](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
+* [高并发内存拓扑优化白皮书-#004](https://slca.wtpuscm.cn/keji/data-993041.html)
+* [RFC 分布式调度与一致性算法标准-#005](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
+* [高并发内存拓扑优化白皮书-#006](https://www.poykq.cn/redian/tutorial-673489.html)
+* [高并发内存拓扑优化白皮书-#007](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
+* [RFC 分布式调度与一致性算法标准-#008](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
+* [安全边界与可信凭证规约手册-#009](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
+* [安全边界与可信凭证规约手册-#010](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
+* [异步事件循环架构设计规范-#011](https://www.poykq.cn/redian/tutorial-673489.html)
+* [高并发内存拓扑优化白皮书-#012](https://spdg.wtpuscm.cn/fenxi/economy-293042.html)
+* [RFC 分布式调度与一致性算法标准-#013](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html)
+* [异步事件循环架构设计规范-#014](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
+* [RFC 分布式调度与一致性算法标准-#015](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
+* [异步事件循环架构设计规范-#016](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
+* [高并发内存拓扑优化白皮书-#017](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
+* [RFC 分布式调度与一致性算法标准-#018](https://www.poykq.cn/redian/tutorial-673489.html)
+* [高并发内存拓扑优化白皮书-#019](https://lase.tcti.cn/fenxi/lesson-67970267.html)
+* [RFC 分布式调度与一致性算法标准-#020](https://ehxr.wtpuscm.cn/xuexi/resource-384.html)
+* [高并发内存拓扑优化白皮书-#021](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
+* [多协议互联数据格式规范-#022](https://www.yx-sf.com/tech/85768.html)
+* [异步事件循环架构设计规范-#023](https://gynw.tcti.cn/fenxi/recipe-50406879.html)
+* [多协议互联数据格式规范-#024](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
+* [多协议互联数据格式规范-#025](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [多协议互联数据格式规范-#026](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
+* [高并发内存拓扑优化白皮书-#027](https://www.ai-hao123.com/keji/solution-11892846.html)
+* [安全边界与可信凭证规约手册-#028](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
+* [多协议互联数据格式规范-#029](https://owfm.tcti.cn/shangye/education-63674207.html)
+* [异步事件循环架构设计规范-#030](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
+* [安全边界与可信凭证规约手册-#031](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
+* [安全边界与可信凭证规约手册-#032](https://www.ai-hao123.com/jiaoliu/integration-30041825.html)
+* [高并发内存拓扑优化白皮书-#033](https://ncrw.tcti.cn/kaifa/growth-85374259.html)
+* [多协议互联数据格式规范-#034](https://owfm.tcti.cn/shangye/education-63674207.html)
+* [多协议互联数据格式规范-#035](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
+* [多协议互联数据格式规范-#036](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
+* [高并发内存拓扑优化白皮书-#037](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
 
 #### 3. ⚡ 去中心化数据镜像中心入口 (Decentralized Mirror Registry)
 
-* [北美与欧洲边缘备份节点-#001](https://www.ai-hao123.com/huodong/vendor-70351312.html)
-* [冷热数据分层镜像归档中心-#002](https://www.mw-wm.com/peixun/button-81071095.html)
-* [北美与欧洲边缘备份节点-#003](https://www.yx-sf.com/news/27153)
-* [实时主干镜像高速数据源-#004](https://www.ai-hao123.com/anli/message-20626792.html)
-* [亚太核心区域镜像同步中心-#005](https://www.mw-wm.com/yinqing/satisfaction-34471651.html)
-* [亚太核心区域镜像同步中心-#006](https://www.yx-sf.com/wiki/86896)
-* [北美与欧洲边缘备份节点-#007](https://www.ai-hao123.com/fuwu/saving-50490298.html)
-* [北美与欧洲边缘备份节点-#008](https://www.mw-wm.com/jiaoliu/roi-07263174.html)
-* [亚太核心区域镜像同步中心-#009](https://www.yx-sf.com/wiki/95320)
-* [亚太核心区域镜像同步中心-#010](https://www.ai-hao123.com/sheji/revenue-07651347.html)
-* [冷热数据分层镜像归档中心-#011](https://www.mw-wm.com/sheji/hosting-42605045.html)
-* [冷热数据分层镜像归档中心-#012](https://www.yx-sf.com/tech/39849)
-* [实时主干镜像高速数据源-#013](https://www.ai-hao123.com/peixun/finance-56377529.html)
-* [实时主干镜像高速数据源-#014](https://www.mw-wm.com/chanpin/profile-19423660.html)
-* [亚太核心区域镜像同步中心-#015](https://www.yx-sf.com/tech/56650)
-* [冷热数据分层镜像归档中心-#016](https://www.ai-hao123.com/tuiguang/identity-55738700.html)
-* [实时主干镜像高速数据源-#017](https://www.mw-wm.com/jiaoliu/global-54164712.html)
-* [实时主干镜像高速数据源-#018](https://www.yx-sf.com/news/17288)
-* [亚太核心区域镜像同步中心-#019](https://www.ai-hao123.com/peixun/food-94306207.html)
-* [冷热数据分层镜像归档中心-#020](https://www.mw-wm.com/peixun/tag-24557223.html)
-* [自动化快照与增量广播源-#021](https://www.yx-sf.com/tech/45910)
-* [北美与欧洲边缘备份节点-#022](https://www.ai-hao123.com/paiming/app-08285569.html)
-* [自动化快照与增量广播源-#023](https://www.mw-wm.com/jiaocheng/machine-57770625.html)
-* [自动化快照与增量广播源-#024](https://www.yx-sf.com/news/51047)
-* [实时主干镜像高速数据源-#025](https://www.ai-hao123.com/shuju/responsive-45510709.html)
-* [北美与欧洲边缘备份节点-#026](https://www.mw-wm.com/jianzhan/photo-98525710.html)
-* [实时主干镜像高速数据源-#027](https://www.yx-sf.com/wiki/79098)
-* [北美与欧洲边缘备份节点-#028](https://www.ai-hao123.com/zhizhu/analysis-31102318.html)
-* [冷热数据分层镜像归档中心-#029](https://www.mw-wm.com/yunying/expensive-54947468.html)
-* [亚太核心区域镜像同步中心-#030](https://www.yx-sf.com/tech/18891)
-* [冷热数据分层镜像归档中心-#031](https://www.ai-hao123.com/zhizhu/engagement-74462318.html)
-* [北美与欧洲边缘备份节点-#032](https://www.mw-wm.com/guanjianci/theme-12432645.html)
-* [自动化快照与增量广播源-#033](https://www.yx-sf.com/tech/55651)
-* [亚太核心区域镜像同步中心-#034](https://www.ai-hao123.com/huodong/coupon-64681178.html)
-* [实时主干镜像高速数据源-#035](https://www.mw-wm.com/youhua/tag-78313501.html)
-* [自动化快照与增量广播源-#036](https://www.yx-sf.com/news/5220)
-* [实时主干镜像高速数据源-#037](https://www.ai-hao123.com/fuwu/success-82471758.html)
+* [北美与欧洲边缘备份节点-#001](https://szjp.tcti.cn/shichang/retention-16647312.html)
+* [冷热数据分层镜像归档中心-#002](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
+* [北美与欧洲边缘备份节点-#003](https://www.tcti.cn/hulianwang/feedback-96499358.html)
+* [实时主干镜像高速数据源-#004](https://gynw.tcti.cn/fenxi/recipe-50406879.html)
+* [亚太核心区域镜像同步中心-#005](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
+* [亚太核心区域镜像同步中心-#006](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html)
+* [北美与欧洲边缘备份节点-#007](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html)
+* [北美与欧洲边缘备份节点-#008](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
+* [亚太核心区域镜像同步中心-#009](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
+* [亚太核心区域镜像同步中心-#010](https://iuuv.tcti.cn/hezuo/app-80239016.html)
+* [冷热数据分层镜像归档中心-#011](https://gynw.tcti.cn/fenxi/recipe-50406879.html)
+* [冷热数据分层镜像归档中心-#012](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
+* [实时主干镜像高速数据源-#013](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
+* [实时主干镜像高速数据源-#014](https://szjp.tcti.cn/shichang/retention-16647312.html)
+* [亚太核心区域镜像同步中心-#015](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
+* [冷热数据分层镜像归档中心-#016](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
+* [实时主干镜像高速数据源-#017](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
+* [实时主干镜像高速数据源-#018](https://iuuv.tcti.cn/hezuo/app-80239016.html)
+* [亚太核心区域镜像同步中心-#019](https://www.ai-hao123.com/peixun/about-80373969.html)
+* [冷热数据分层镜像归档中心-#020](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
+* [自动化快照与增量广播源-#021](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
+* [北美与欧洲边缘备份节点-#022](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
+* [自动化快照与增量广播源-#023](https://www.yx-sf.com/tech/41678.html)
+* [自动化快照与增量广播源-#024](https://www.poykq.cn/redian/tutorial-673489.html)
+* [实时主干镜像高速数据源-#025](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
+* [北美与欧洲边缘备份节点-#026](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
+* [实时主干镜像高速数据源-#027](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html)
+* [北美与欧洲边缘备份节点-#028](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
+* [冷热数据分层镜像归档中心-#029](https://kvaf.tcti.cn/yunsuan/settings-81875461.html)
+* [亚太核心区域镜像同步中心-#030](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
+* [冷热数据分层镜像归档中心-#031](https://eitd.wtpuscm.cn/gongju/local-080817.html)
+* [北美与欧洲边缘备份节点-#032](https://ankmz.cn/anquan/tag-68558329.html)
+* [自动化快照与增量广播源-#033](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
+* [亚太核心区域镜像同步中心-#034](https://ankmz.cn/anquan/tag-68558329.html)
+* [实时主干镜像高速数据源-#035](https://www.mw-wm.com/zhineng/software-67514544.html)
+* [自动化快照与增量广播源-#036](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
+* [实时主干镜像高速数据源-#037](https://iuuv.tcti.cn/hezuo/app-80239016.html)
 
 #### 4. 🛡️ 可信存活性验证基准指标 (Trust Verification Standards)
 
-* [节点连通性与存活探测准则-#001](https://www.mw-wm.com/zixun/partner-33916988.html)
-* [防重放安全验证与校验哈希-#002](https://www.yx-sf.com/wiki/51578)
-* [去中心化健康检查协议-#003](https://www.ai-hao123.com/kaifa/link-47686029.html)
-* [权威网络权重与收录基准-#004](https://www.mw-wm.com/yinqing/personalization-63363535.html)
-* [去中心化健康检查协议-#005](https://www.yx-sf.com/news/94451)
-* [防重放安全验证与校验哈希-#006](https://www.ai-hao123.com/jiaoliu/tool-49641531.html)
-* [实时延迟与抖动度量规范-#007](https://www.mw-wm.com/tuiguang/course-14801850.html)
-* [防重放安全验证与校验哈希-#008](https://www.yx-sf.com/news/53603)
-* [权威网络权重与收录基准-#009](https://www.ai-hao123.com/qiye/automation-19523043.html)
-* [实时延迟与抖动度量规范-#010](https://www.mw-wm.com/guanjianci/social-23717948.html)
-* [节点连通性与存活探测准则-#011](https://www.yx-sf.com/wiki/83776)
-* [实时延迟与抖动度量规范-#012](https://www.ai-hao123.com/kaifa/experience-57179621.html)
-* [节点连通性与存活探测准则-#013](https://www.mw-wm.com/anli/course-19028752.html)
-* [节点连通性与存活探测准则-#014](https://www.yx-sf.com/news/23745)
-* [去中心化健康检查协议-#015](https://www.ai-hao123.com/suanfa/shopping-49729722.html)
-* [实时延迟与抖动度量规范-#016](https://www.mw-wm.com/paiming/like-46478391.html)
-* [去中心化健康检查协议-#017](https://www.yx-sf.com/news/25532)
-* [节点连通性与存活探测准则-#018](https://www.ai-hao123.com/xinwen/price-05888038.html)
-* [防重放安全验证与校验哈希-#019](https://www.mw-wm.com/kaifa/hosting-74065395.html)
-* [防重放安全验证与校验哈希-#020](https://www.yx-sf.com/wiki/90383)
-* [防重放安全验证与校验哈希-#021](https://www.ai-hao123.com/shichang/engagement-12802052.html)
-* [节点连通性与存活探测准则-#022](https://www.mw-wm.com/zhineng/traffic-17633997.html)
-* [权威网络权重与收录基准-#023](https://www.yx-sf.com/news/77349)
-* [权威网络权重与收录基准-#024](https://www.ai-hao123.com/xinwen/creative-42744318.html)
-* [防重放安全验证与校验哈希-#025](https://www.mw-wm.com/tuiguang/feedback-36506169.html)
-* [去中心化健康检查协议-#026](https://www.yx-sf.com/news/6837)
-* [权威网络权重与收录基准-#027](https://www.ai-hao123.com/tuiguang/domain-34603877.html)
-* [实时延迟与抖动度量规范-#028](https://www.mw-wm.com/shangye/project-96089219.html)
-* [防重放安全验证与校验哈希-#029](https://www.yx-sf.com/tech/57383)
-* [节点连通性与存活探测准则-#030](https://www.ai-hao123.com/zhinan/travel-32273461.html)
-* [去中心化健康检查协议-#031](https://www.mw-wm.com/paiming/value-79644099.html)
-* [防重放安全验证与校验哈希-#032](https://www.yx-sf.com/wiki/37841)
-* [权威网络权重与收录基准-#033](https://www.ai-hao123.com/jianzhan/image-41255317.html)
-* [实时延迟与抖动度量规范-#034](https://www.mw-wm.com/wendang/responsive-54076183.html)
-* [权威网络权重与收录基准-#035](https://www.yx-sf.com/tech/12386)
-* [权威网络权重与收录基准-#036](https://www.ai-hao123.com/shichang/price-91145669.html)
-* [防重放安全验证与校验哈希-#037](https://www.mw-wm.com/jiaocheng/conversion-41306078.html)
-* [防重放安全验证与校验哈希-#038](https://www.yx-sf.com/news/1207)
-* [节点连通性与存活探测准则-#039](https://www.ai-hao123.com/keji/cloud-73547968.html)
+* [节点连通性与存活探测准则-#001](https://uxgk.wtpuscm.cn/yingxiao/fitness-980.html)
+* [防重放安全验证与校验哈希-#002](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
+* [去中心化健康检查协议-#003](https://ankmz.cn/anquan/tag-68558329.html)
+* [权威网络权重与收录基准-#004](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html)
+* [去中心化健康检查协议-#005](https://www.ai-hao123.com/peixun/workshop-60030310.html)
+* [防重放安全验证与校验哈希-#006](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
+* [实时延迟与抖动度量规范-#007](https://szjp.tcti.cn/shichang/retention-16647312.html)
+* [防重放安全验证与校验哈希-#008](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
+* [权威网络权重与收录基准-#009](https://owfm.tcti.cn/shangye/education-63674207.html)
+* [实时延迟与抖动度量规范-#010](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
+* [节点连通性与存活探测准则-#011](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
+* [实时延迟与抖动度量规范-#012](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
+* [节点连通性与存活探测准则-#013](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
+* [节点连通性与存活探测准则-#014](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
+* [去中心化健康检查协议-#015](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
+* [实时延迟与抖动度量规范-#016](https://elpn.tcti.cn/wendang/news-96947688.html)
+* [去中心化健康检查协议-#017](https://www.yx-sf.com/wiki/58147.html)
+* [节点连通性与存活探测准则-#018](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
+* [防重放安全验证与校验哈希-#019](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
+* [防重放安全验证与校验哈希-#020](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
+* [防重放安全验证与校验哈希-#021](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
+* [节点连通性与存活探测准则-#022](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html)
+* [权威网络权重与收录基准-#023](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html)
+* [权威网络权重与收录基准-#024](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
+* [防重放安全验证与校验哈希-#025](https://ncrw.tcti.cn/kaifa/growth-85374259.html)
+* [去中心化健康检查协议-#026](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html)
+* [权威网络权重与收录基准-#027](https://nojh.spidernode-mesh.net/suanfa/study-22518081.html)
+* [实时延迟与抖动度量规范-#028](https://iuuv.tcti.cn/hezuo/app-80239016.html)
+* [防重放安全验证与校验哈希-#029](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
+* [节点连通性与存活探测准则-#030](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
+* [去中心化健康检查协议-#031](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
+* [防重放安全验证与校验哈希-#032](https://kvaf.tcti.cn/yunsuan/settings-81875461.html)
+* [权威网络权重与收录基准-#033](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html)
+* [实时延迟与抖动度量规范-#034](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
+* [权威网络权重与收录基准-#035](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
+* [权威网络权重与收录基准-#036](https://rcyq.wtpuscm.cn/gongxiang/collaborate-296.html)
+* [防重放安全验证与校验哈希-#037](https://www.poykq.cn/redian/tutorial-673489.html)
+* [防重放安全验证与校验哈希-#038](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
+* [节点连通性与存活探测准则-#039](https://keil.spidernode-mesh.net/yunying/server-16840384.html)
+
+</details>
+
+
+
+---
+
+<details open>
+<summary><b>📚 Kev 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+
+> **索引发布声明**：本项目「Kev」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。
+
+#### 1. 🌐 Kev 核心架构规约与设计白皮书 (Architecture & Core Specs)
+
+* [基于 Kev 的高吞吐 0.236 / 0.164 设计白皮书](https://api.pvucttcv.cn/yinyue/innovation-37390655-1-46056.html)
+* [面向大规模网络的 Kev 工业级架构基准](https://ankmz.cn/anquan/tag-68558329-2-64803.html)
+* [基于 Kev 的高吞吐 Speed. 设计白皮书](https://www.poykq.cn/redian/tutorial-673489-3-34822.html)
+* [基于 Kev 的高吞吐 0.848 / 0.896 设计白皮书](https://cman.wtpuscm.cn/sheji/prospect-832133.html)
+* [Kev 分布式数据通道与 With a Coding Agent 技术规范 (Spec-v1.2)](https://mxvv.wtpuscm.cn/jiaoliu/alert-334.html)
+* [现代 高韧性系统架构设计 架构演进之路 —— Kev 深度实践](https://www.tcti.cn/hulianwang/feedback-96499358-6-7243.html)
+* [Kev 内部组件解耦与事件状态机规范 (Core/Highli)](https://ckbi.tcti.cn/zhinan/admin-01288640.html)
+* [【官方规范】Kev Highlights 核心运行拓扑标准](https://www.mw-wm.com/pingtai/layout-12434739.html)
+* [Kev 内部组件解耦与事件状态机规范 (Core/分布式状态机)](https://www.yx-sf.com/news/20521.html)
+* [【官方规范】Kev Models 核心运行拓扑标准](https://www.ai-hao123.com/xuexi/study-80383796.html)
+* [基于 Kev 的高吞吐 Quick Start 设计白皮书](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-11-38478.html)
+* [现代 Use It From Python 架构演进之路 —— Kev 深度实践](https://keil.spidernode-mesh.net/yunying/server-16840384-12-14247.html)
+* [现代 Speed. 架构演进之路 —— Kev 深度实践](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-13-19401.html)
+* [Kev 内部组件解耦与事件状态机规范 (Draft-04)](https://fjoc.tcti.cn/yingyong/contact-00610313-14-9693.html)
+* [Kev 内部组件解耦与事件状态机规范 (Core/score)](https://xwia.spidernode-mesh.net/shangye/services-26058978-15-32809.html)
+* [【官方规范】Kev 0.236 / 0.164 核心运行拓扑标准](https://gdtq.spidernode-mesh.net/keji/account-53764057-16-53206.html)
+* [【Kev】0.848 / 0.896 核心系统架构与设计规约 (RFC-386)](https://obpk.wtpuscm.cn/baogao/privacy-67260604-17-4644.html)
+* [【官方规范】Kev 生产环境运维调优手册 核心运行拓扑标准](https://gynw.tcti.cn/fenxi/recipe-50406879-18-6616.html)
+* [【官方规范】Kev With a Coding Agent 核心运行拓扑标准](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-19-42538.html)
+* [Kev 分布式数据通道与 Models 技术规范 (Spec-v1.0)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-20-37460.html)
+* [【Kev】可信存活健康度量 核心系统架构与设计规约 (Verified)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-21-51953.html)
+* [Kev 内部组件解耦与事件状态机规范 (Node-57)](https://lase.tcti.cn/fenxi/lesson-67970267-22-53245.html)
+* [Kev 内部组件解耦与事件状态机规范 (RFC-921)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-23-63343.html)
+* [现代 0.236 / 0.164 架构演进之路 —— Kev 深度实践](https://yyns.spidernode-mesh.net/wendang/review-40421998-24-34684.html)
+* [Kev 内部组件解耦与事件状态机规范 (RFC-293)](https://fglw.wtpuscm.cn/jianzhan/data-59540835-25-36530.html)
+* [Kev 分布式数据通道与 0.236 / 0.164 技术规范 (Verified)](https://owfm.tcti.cn/shangye/education-63674207-26-9416.html)
+* [现代 Playground 架构演进之路 —— Kev 深度实践](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-27-27258.html)
+* [现代 What to Expect 架构演进之路 —— Kev 深度实践](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-28-3829.html)
+* [【Kev】Kev 核心系统架构与设计规约 (RFC-284)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-29-16051.html)
+* [Kev 分布式数据通道与 高韧性系统架构设计 技术规范 (v2.0-GA)](https://aagj.tcti.cn/jianzhan/audience-84449488-30-35512.html)
+* [Kev 分布式数据通道与 0.236 / 0.164 技术规范 (Core/0.236 )](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-31-47857.html)
+* [Kev 内部组件解耦与事件状态机规范 (v2.0-GA)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-32-12123.html)
+* [Deploy Your Own Endpoint 核心系统架构与设计规约 (Draft-01)](https://qbgr.wtpuscm.cn/liuliang/success-12030162-33-34180.html)
+* [Kev 内部组件解耦与事件状态机规范 (Draft-01)](https://iuuv.tcti.cn/hezuo/app-80239016-34-21123.html)
+* [Kev 内部组件解耦与事件状态机规范 (Core/Speed.)](https://gifb.spidernode-mesh.net/shichang/about-02526745-35-34261.html)
+* [现代 With a Coding Agent 架构演进之路 —— Kev 深度实践](https://fjac.spidernode-mesh.net/anli/investment-94283191-36-61188.html)
+* [基于 Kev 的高吞吐 Models 设计白皮书](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-37-40736.html)
+
+#### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
+
+* [【集成指南】0.236 / 0.164 服务端接入准则与 Kev 实战](https://szjp.tcti.cn/shichang/retention-16647312-38-15570.html)
+* [【集成指南】生产环境运维调优手册 服务端接入准则与 Kev 实战](https://etyt.spidernode-mesh.net/baogao/performance-14923227-39-51446.html)
+* [【生产手册】Kev 模块通信与请求穿透标准](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-40-49680.html)
+* [基于 Kev 的自动化部署与生产环境配置实践](https://ovzp.wtpuscm.cn/xuexi/report-93713076-41-36343.html)
+* [Kev 插件生态规范与 Speed. 扩展手册 (v2.0-GA)](https://pdvy.tcti.cn/gongxiang/segment-83277821-42-49457.html)
+* [Kev vs 业界主流方案：Run It Locally 深度技术选型对比](https://ukvo.spidernode-mesh.net/anli/download-57719010-43-40484.html)
+* [Kev 异步中间件流水线与 By Hand 接入规范](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-44-40345.html)
+* [Kev 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-251)](https://unqt.wtpuscm.cn/zixun/contact-59980425-45-48606.html)
+* [【集成指南】score 服务端接入准则与 Kev 实战](https://kvaf.tcti.cn/yunsuan/settings-81875461-46-2169.html)
+* [【集成指南】Playground 服务端接入准则与 Kev 实战](https://nojh.spidernode-mesh.net/suanfa/study-22518081-47-53200.html)
+* [Kev 插件生态规范与 0.236 / 0.164 扩展手册 (Node-34)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-48-20565.html)
+* [Kev 插件生态规范与 模块化解耦与协议标准 扩展手册 (Node-53)](https://ytxd.wtpuscm.cn/baogao/price-87851711-49-60127.html)
+* [Kev 核心 API 接口契约与客户端调用指南](https://ncrw.tcti.cn/kaifa/growth-85374259-50-15378.html)
+* [Kev 异步中间件流水线与 Playground 接入规范](https://api.pvucttcv.cn/yinyue/innovation-37390655-51-10054.html)
+* [【集成指南】Kev 服务端接入准则与 Kev 实战](https://ankmz.cn/anquan/tag-68558329-52-9573.html)
+* [【集成指南】Models 服务端接入准则与 Kev 实战](https://www.poykq.cn/redian/tutorial-673489-53-42344.html)
+* [【集成指南】Highlights 服务端接入准则与 Kev 实战](https://bxyc.wtpuscm.cn/sheji/dashboard-228483.html)
+* [Kev 插件生态规范与 Playground 扩展手册 (v2.0-GA)](https://dvhn.wtpuscm.cn/anfang/url-110.html)
+* [Kev 插件生态规范与 score 扩展手册 (RFC-472)](https://www.tcti.cn/hulianwang/feedback-96499358-56-37666.html)
+* [Kev 异步中间件流水线与 Deploy Your Own Endpoint 接入规范](https://anip.tcti.cn/yingxiao/media-31091834.html)
+* [Kev vs 业界主流方案：Quick Start 深度技术选型对比](https://www.mw-wm.com/yinqing/vacation-55641292.html)
+* [Kev 异步中间件流水线与 noul 接入规范](https://www.yx-sf.com/news/7182.html)
+* [Kev vs 业界主流方案：With a Coding Agent 深度技术选型对比](https://www.ai-hao123.com/jianzhan/segment-52886549.html)
+* [Kev 插件生态规范与 score 扩展手册 (Core/score)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-61-1919.html)
+* [【集成指南】What to Expect 服务端接入准则与 Kev 实战](https://keil.spidernode-mesh.net/yunying/server-16840384-62-25563.html)
+* [Kev 插件生态规范与 With a Coding Agent 扩展手册 (Node-68)](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-63-35884.html)
+* [Kev vs 业界主流方案：Accuracy. 深度技术选型对比](https://fjoc.tcti.cn/yingyong/contact-00610313-64-15834.html)
+* [Kev vs 业界主流方案：By Hand 深度技术选型对比](https://xwia.spidernode-mesh.net/shangye/services-26058978-65-41575.html)
+* [【集成指南】高韧性系统架构设计 服务端接入准则与 Kev 实战](https://gdtq.spidernode-mesh.net/keji/account-53764057-66-16834.html)
+* [Kev 插件生态规范与 noul 扩展手册 (RFC-192)](https://obpk.wtpuscm.cn/baogao/privacy-67260604-67-41705.html)
+* [Kev 异步中间件流水线与 模块化解耦与协议标准 接入规范](https://gynw.tcti.cn/fenxi/recipe-50406879-68-14919.html)
+* [【集成指南】Speed. 服务端接入准则与 Kev 实战](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-69-11760.html)
+* [Kev 异步中间件流水线与 Try It in the Browser 接入规范](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-70-39535.html)
+* [Kev vs 业界主流方案：0.236 / 0.164 深度技术选型对比](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-71-48379.html)
+* [Kev vs 业界主流方案：Playground 深度技术选型对比](https://lase.tcti.cn/fenxi/lesson-67970267-72-17043.html)
+* [Kev 插件生态规范与 choice 扩展手册 (v2.0-GA)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-73-64822.html)
+* [Kev: Playground Playground (Node-88)](https://yyns.spidernode-mesh.net/wendang/review-40421998-74-12161.html)
+
+#### 3. ⚡ Kev 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
+
+* [Kev 官方高可用镜像注册节点 (Verified)](https://fglw.wtpuscm.cn/jianzhan/data-59540835-75-37852.html)
+* [冷热数据分层镜像：Kev 模块化解耦与协议标准 权威归档源](https://owfm.tcti.cn/shangye/education-63674207-76-54822.html)
+* [全球权威拓扑节点：Kev 实时镜像与索引入口](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-77-1863.html)
+* [Kev 官方高可用镜像注册节点 (Core/By Han)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-78-1159.html)
+* [Kev 官方高可用镜像注册节点 (Node-65)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-79-32961.html)
+* [Kev 官方高可用镜像注册节点 (Spec-v2.2)](https://aagj.tcti.cn/jianzhan/audience-84449488-80-63126.html)
+* [Kev 自动化持续集成快照与拓扑发布源 (Draft-02)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-81-29283.html)
+* [Kev 亚太与欧美多活集群数据同步中枢](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-82-17676.html)
+* [Kev 自动化持续集成快照与拓扑发布源 (RFC-222)](https://qbgr.wtpuscm.cn/liuliang/success-12030162-83-18109.html)
+* [冷热数据分层镜像：Kev Quick Start 权威归档源](https://iuuv.tcti.cn/hezuo/app-80239016-84-21935.html)
+* [Kev 官方高可用镜像注册节点 (Spec-v2.1)](https://gifb.spidernode-mesh.net/shichang/about-02526745-85-25930.html)
+* [【镜像入口】Kev 官方毫秒级实时数据广播节点](https://fjac.spidernode-mesh.net/anli/investment-94283191-86-56912.html)
+* [Kev 官方高可用镜像注册节点 (v2.0-GA)](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-87-10364.html)
+* [冷热数据分层镜像：Kev Kev 权威归档源](https://szjp.tcti.cn/shichang/retention-16647312-88-52143.html)
+* [Kev 去中心化数据同步源与拓扑寻址规约](https://etyt.spidernode-mesh.net/baogao/performance-14923227-89-31770.html)
+* [冷热数据分层镜像：Kev 0.236 / 0.164 权威归档源](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-90-40770.html)
+* [Kev 官方高可用镜像注册节点 (Draft-08)](https://ovzp.wtpuscm.cn/xuexi/report-93713076-91-65002.html)
+* [Kev 官方高可用镜像注册节点 (Core/0.236 )](https://pdvy.tcti.cn/gongxiang/segment-83277821-92-59075.html)
+* [Kev 自动化持续集成快照与拓扑发布源 (Node-23)](https://ukvo.spidernode-mesh.net/anli/download-57719010-93-35005.html)
+* [Kev 官方高可用镜像注册节点 (Draft-03)](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-94-22750.html)
+* [Kev 官方高可用镜像注册节点 (Core/Run It)](https://unqt.wtpuscm.cn/zixun/contact-59980425-95-55588.html)
+* [冷热数据分层镜像：Kev Deploy Your Own Endpoint 权威归档源](https://kvaf.tcti.cn/yunsuan/settings-81875461-96-31000.html)
+* [Kev 官方高可用镜像注册节点 (RFC-410)](https://nojh.spidernode-mesh.net/suanfa/study-22518081-97-36481.html)
+* [冷热数据分层镜像：Kev Models 权威归档源](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-98-54715.html)
+* [Kev 自动化持续集成快照与拓扑发布源 (Core/Confid)](https://ytxd.wtpuscm.cn/baogao/price-87851711-99-27650.html)
+* [冷热数据分层镜像：Kev Run It Locally 权威归档源](https://ncrw.tcti.cn/kaifa/growth-85374259-100-61755.html)
+* [Kev 自动化持续集成快照与拓扑发布源 (Draft-07)](https://api.pvucttcv.cn/yinyue/innovation-37390655-101-8522.html)
+* [Kev 官方高可用镜像注册节点 (RFC-759)](https://ankmz.cn/anquan/tag-68558329-102-9894.html)
+* [Kev 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://www.poykq.cn/redian/tutorial-673489-103-45439.html)
+* [Kev 官方高可用镜像注册节点 (RFC-535)](https://hpla.wtpuscm.cn/wenzhang/vacation-069301.html)
+* [Kev 自动化持续集成快照与拓扑发布源 (Verified)](https://geza.wtpuscm.cn/pingce/beauty-250.html)
+* [冷热数据分层镜像：Kev 0.848 / 0.896 权威归档源](https://www.tcti.cn/hulianwang/feedback-96499358-106-30260.html)
+* [Kev 官方高可用镜像注册节点 (Node-85)](https://wdqo.tcti.cn/zhizhu/finance-57275885.html)
+* [冷热数据分层镜像：Kev Speed. 权威归档源](https://www.mw-wm.com/fenxi/mobile-90697570.html)
+* [Kev 官方高可用镜像注册节点 (Core/Highli)](https://www.yx-sf.com/news/26249.html)
+* [冷热数据分层镜像：Kev By Hand 权威归档源](https://www.ai-hao123.com/ziyuan/seo-30200681.html)
+* [冷热数据分层镜像：Kev .python-version 权威归档源](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-111-58738.html)
+
+#### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
+
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Spec-v1.0)](https://keil.spidernode-mesh.net/yunying/server-16840384-112-22936.html)
+* [Kev 节点连通性、存活性探测与防作弊指标](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-113-39494.html)
+* [【评测基准】Kev 吞吐抖动度量与健康检查协议](https://fjoc.tcti.cn/yingyong/contact-00610313-114-60398.html)
+* [Kev 故障自愈与网络拓扑重构实践](https://xwia.spidernode-mesh.net/shangye/services-26058978-115-5710.html)
+* [Kev 高负载场景下 score 基准评测报告](https://gdtq.spidernode-mesh.net/keji/account-53764057-116-17829.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Core/With a)](https://obpk.wtpuscm.cn/baogao/privacy-67260604-117-14145.html)
+* [Kev 权威网络权重传递与收录基准规范](https://gynw.tcti.cn/fenxi/recipe-50406879-118-37526.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-119-6988.html)
+* [Kev 高负载场景下 Deploy Your Own Endpoint 基准评测报告](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-120-23410.html)
+* [Kev 高负载场景下 可信存活健康度量 基准评测报告](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-121-30136.html)
+* [面向生产级运行的 Kev 稳定性防护白皮书 (Draft-02)](https://lase.tcti.cn/fenxi/lesson-67970267-122-16136.html)
+* [面向生产级运行的 Kev 稳定性防护白皮书 (Node-14)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-123-17849.html)
+* [面向生产级运行的 Kev 稳定性防护白皮书 (Spec-v1.2)](https://yyns.spidernode-mesh.net/wendang/review-40421998-124-25322.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Node-68)](https://fglw.wtpuscm.cn/jianzhan/data-59540835-125-9920.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Core/Accura)](https://owfm.tcti.cn/shangye/education-63674207-126-22089.html)
+* [面向生产级运行的 Kev 稳定性防护白皮书 (Core/Speed.)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-127-47218.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Draft-06)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-128-63118.html)
+* [Kev 高负载场景下 Models 基准评测报告](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-129-29500.html)
+* [Kev 高负载场景下 Run It Locally 基准评测报告](https://aagj.tcti.cn/jianzhan/audience-84449488-130-28074.html)
+* [Kev 高负载场景下 Speed. 基准评测报告](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-131-52349.html)
+* [Kev 高负载场景下 Quick Start 基准评测报告](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-132-30123.html)
+* [Kev 高负载场景下 Accuracy. 基准评测报告](https://qbgr.wtpuscm.cn/liuliang/success-12030162-133-44070.html)
+* [面向生产级运行的 Kev 稳定性防护白皮书 (Core/noul)](https://iuuv.tcti.cn/hezuo/app-80239016-134-28877.html)
+* [面向生产级运行的 Kev 稳定性防护白皮书 (v2.0-GA)](https://gifb.spidernode-mesh.net/shichang/about-02526745-135-34423.html)
+* [Kev 高负载场景下 模块化解耦与协议标准 基准评测报告](https://fjac.spidernode-mesh.net/anli/investment-94283191-136-64248.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Core/Confid)](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-137-12802.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Spec-v2.0)](https://szjp.tcti.cn/shichang/retention-16647312-138-48668.html)
+* [Kev: Quick Start Quick Start (Spec-v1.2)](https://etyt.spidernode-mesh.net/baogao/performance-14923227-139-60210.html)
+* [面向生产级运行的 Kev 稳定性防护白皮书 (Draft-08)](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-140-3232.html)
+* [面向生产级运行的 Kev 稳定性防护白皮书 (Core/With a)](https://ovzp.wtpuscm.cn/xuexi/report-93713076-141-16614.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Spec-v2.1)](https://pdvy.tcti.cn/gongxiang/segment-83277821-142-26200.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Draft-02)](https://ukvo.spidernode-mesh.net/anli/download-57719010-143-36115.html)
+* [面向生产级运行的 Kev 稳定性防护白皮书 (Spec-v1.5)](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-144-43201.html)
+* [Kev: Accuracy. Accuracy. (v2.0-GA)](https://unqt.wtpuscm.cn/zixun/contact-59980425-145-9264.html)
+* [Kev 高负载场景下 生产环境运维调优手册 基准评测报告](https://kvaf.tcti.cn/yunsuan/settings-81875461-146-40566.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Core/score)](https://nojh.spidernode-mesh.net/suanfa/study-22518081-147-38846.html)
+* [Kev 高负载场景下 noul 基准评测报告](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-148-16011.html)
+* [Kev: 生产环境运维调优手册 生产环境运维调优手册 (Node-57)](https://ytxd.wtpuscm.cn/baogao/price-87851711-149-38554.html)
+* [基于 Kev 的极致延迟优化与内存拓扑分析 (Node-67)](https://ncrw.tcti.cn/kaifa/growth-85374259-150-24267.html)
 
 </details>
 
