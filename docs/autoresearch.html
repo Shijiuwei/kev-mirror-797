@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Running an unattended research session - kev-mirror-797 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">kev-mirror-797</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/kev-mirror-797" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/kev-mirror-797/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">架构设计</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Running an unattended research session</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Running an unattended research session</h1>
+<p>This is the operating program for a research session that runs without a human watching: an overnight session, or a
+long hand-off during the day. It replaces the per-night prompts (the round-6 and night-3 programs, kept at the git tag
+<code>research-archive-2026-09-24</code> under <code>docs/prompts/</code>) and folds in what went wrong on those nights. The research rules it
+applies are in <a href="../PLAN.md"><code>PLAN.md</code></a>, "Standing rules for every round"; the commands are in <a href="../AGENTS.md"><code>AGENTS.md</code></a>.</p>
+<p>A session hill-climbs and confirms under registered rules and leaves a record Jared can act on. It does not publish.</p>
+<h2>1. Start</h2>
+<p>Spend the first 30 minutes reading, not launching.</p>
+<ol>
+<li><code>AGENTS.md</code>, all of it (commands, frozen suites, canonical homes, Modal settings).</li>
+<li><code>PLAN.md</code>: where we stand, what we have learned, the standing rules, the data policy and Next. For a finding you want to
+build on, read its evidence in the archive: <code>git show research-archive-2026-09-24:PLAN.md</code>.</li>
+<li>The skills in <code>.agents/skills/</code>: <code>kev-modal-study</code> (launching, watching and pulling GPU work; read its Gotchas),
+<code>kev-verify</code> (proving a code change has no regression), <code>kev-pr-description</code> (before any PR), <code>thermonuclear-code-review</code>.</li>
+<li><code>kev/rounds.py</code> (its docstring is the spec schema), the closest past spec in <code>experiments/rounds/</code>, and
+<code>kev/autoresearch.py</code> (<code>session</code>).</li>
+<li>The hand-over itself: authorization (Modal dollars, AI Gateway dollars), what is in scope, what needs Jared.</li>
+</ol>
+<p>Then set up:</p>
+<ul>
+<li>Work in a worktree on a research branch (<code>git worktree add -b research/&lt;session&gt; /tmp/kev-&lt;session&gt; origin/main</code>). Push
+after every commit so nothing is lost if the machine sleeps. Code meant for main goes through its own reviewed PR.</li>
+<li>Read <code>uv run modal billing summary --json</code> and record <code>metered_cost</code> as the baseline in the state file (section 6).</li>
+<li>If a previous session left a state file, read it first and resume from it; detached Modal jobs keep running without you.</li>
+</ul>
+<h2>2. Budgets and the spend rule</h2>
+<ul>
+<li>The authorization is the session's total, counting everything still running. Before <strong>every</strong> launch, read the metered
+cost again and do not launch if <code>(metered_now - baseline) + sum(admission bounds of everything still running) &gt;= authorization</code>.</li>
+<li>A study's admission bound is printed at launch and saved in <code>runs/&lt;study&gt;.spawn.json</code>; a benchmark call's bound is
+<code>compute_bound(gpu, timeout, trials)</code> (<code>kev/budget.py</code>). A spec's study <code>budget</code> must be at least its bound
+(<code>kev.rounds validate</code> checks it; <code>modal_app.admit_study</code> refuses a study over its budget before anything runs, and a
+study is capped at $250 and 28,800 s).</li>
+<li>Keep a reserve (about 10 % of the authorization) that no phase plans into: billing readings lag and get revised, and
+admission bounds overstate reads badly (a read batch carries the timeout of its slowest job).</li>
+<li>Record every reading with its UTC time in the state file. AI Gateway spend (Jev reference reads, label judges) has its own
+cap, enforced by the script that spends it, and is logged in <code>runs/&lt;name&gt;/usage.json</code>.</li>
+<li>The Modal workspace spend limit can only be raised from the dashboard; hitting it kills running containers mid-training.</li>
+</ul>
+<h2>3. Register a round</h2>
+<p>A round is a PLAN.md section plus a spec, committed together before any training or read.</p>
+<ol>
+<li>Write the PLAN.md section: why (the measured gap and its evidence), the data (frozen first, with manifests), the arms, the
+rule (primary, guards with thresholds sized to each suite, rank), the confirmation stages, and the budget. Use the
+standing rules; do not invent a new statistic for one round.</li>
+<li>Write <code>experiments/rounds/r&lt;N&gt;.json</code> by copying the closest past spec (r15 for a joint delta, r17 for a 27B, r10 for a
+skills round, r20 for post-hoc arms without training: a temperature pool, interpolated checkpoints). Leave out <code>"archive"</code>: that key marks the recorded rounds 5-18. Every plan file the spec names, and every
+parent read its rule needs, must exist in this checkout; if a parent lacks a read, <code>launch-reads &lt;spec&gt; --parents</code> makes it.</li>
+<li>New data is a new directory under <code>evals/</code> with a <code>manifest.json</code> (sha256 per file, inputs' hashes). Under the SFT data
+policy (PLAN.md) private corpora keep only the manifest in git, with a <code>"mirror"</code> entry pointing at the private dataset.</li>
+<li><strong>MUST: every served or shipped temperature comes from a pool of held-out datasets, never from a partition of the training
+corpus.</strong> A round that reads calibration (ECE, Brier, confident errors, coverage) registers a <code>temperature</code> pool for its
+arms (copy r20: the transfer-r3 calibration partition's eight held-out public sources + transfer-v9 MMLU-Pro), and a release
+ships the temperature <code>scripts/calibrate_checkpoint.py</code> fits on the same pool. The held-out <em>items</em> of the training sources
+(a training suite's <code>calibration</code> / <code>development</code> partitions) are in distribution: round 19 served its SFT arms at T 0.955
+fitted on <code>sft-v1</code> development rows and failed every calibration criterion (breadth-v1 ECE 0.059); round 20's held-out-datasets
+pool gave 0.0085 on the same checkpoint. What enforces it:
+<ul>
+<li>From round 21, <code>kev.rounds validate</code> and <code>launch</code> refuse a round whose rule or confirmation has a criterion the
+temperature moves (ECE, Brier, NLL, confident errors, coverage; anything but accuracy) and no <code>temperature</code> pool.
+Rounds &lt;= 20 only print a <code>!!! warning</code> per arm trained on a training corpus, so their recorded specs still validate.</li>
+<li><code>kev.rounds validate</code> refuses a pool read that (a) is an arm's training suite, a component of it (sft-v1's
+<code>inputs.components</code>) or its plan's <code>data</code> suite, (b) pools a source any arm trained on, or (c) reads the <code>calibration</code> or
+<code>development</code> partition of any training corpus; it also refuses a pool it cannot check (an arm whose training is
+unknown, a suite without a manifest or listed sources). Checkpoint arms without a trial may name <code>trained_on</code>.</li>
+<li>The read-out records each arm's <code>temperature_source</code>; the table prints <code>!!!</code> for an arm served at its trial's
+development rows of a training corpus (rounds 5-19 all were; from now on such a temperature is screening only).</li>
+<li><code>scripts/calibrate_checkpoint.py</code> refuses the same fit sets (checked against head.pt's training suite);
+<code>--allow-in-distribution</code> is for reproducing an old fit only, and it is recorded in <code>head.pt["temperature_fit"]</code>.</li>
+<li>A trial's in-trial temperature (<code>result.json</code> <code>calibration_fit</code>) says <code>role: in-trial screening ... not a served or  shipped temperature</code>.</li>
+<li>Parents are served at the temperature fitted on their trial's development rows (for Kev-27B that is its shipped 1.38,
+fitted on the same rows); the read-out records that and their shipped head.pt T (<code>parent_temperature_source</code>), and
+<code>validate</code> warns when the two differ by more than 0.05 on a training corpus's rows.</li>
+<li>The disjointness check is by source NAME (nominal, not semantic): two suites carrying the same dataset under different
+names pass it. So a pool must use sources that are eval-only in Kev by construction, like transfer-r3's eight held-out
+public sources and transfer-v9's MMLU-Pro. A pool read's <code>sources</code> allowlist must name sources its suite lists (a
+typo is a problem), and training the checker cannot list (a <code>data</code> file outside <code>evals/</code>, a manifest without
+sources) is a problem for a new round.</li>
+<li><code>calibrate_checkpoint.py --temperature T</code> (a manual value, nothing fitted) needs <code>--reason</code>, recorded in
+<code>head.pt["temperature_fit"]</code> (e.g. "copied from the pool fit of runs/r20-readout").</li>
+</ul>
+</li>
+<li><code>uv run python -m kev.rounds validate experiments/rounds/r&lt;N&gt;.json</code> (add <code>--partitions</code> to verify the partitions) until it
+prints <code>ok</code>. Commit the PLAN section and the spec in one commit, push. That commit time is the registration time.</li>
+</ol>
+<h2>4. Run it end to end</h2>
+<pre><code class="language-bash">KEV_GPU=H200 uv run modal deploy modal_app.py                     # after any change to kev/*.py or any new file under evals/
+uv run python -m kev.rounds launch experiments/rounds/r&lt;N&gt;.json   # one ::study per study, 60 s apart, logs in runs/&lt;study&gt;.log
+caffeinate -i nohup uv run python -m kev.rounds watch experiments/rounds/r&lt;N&gt;.json &gt; runs/r&lt;N&gt;.watch.log 2&gt;&amp;1 &amp;
+</code></pre>
+<ul>
+<li>In the first five minutes of every study, count optimizer steps per minute in <code>modal container logs &lt;id&gt;</code> and project
+the wall time against the timeout (<code>ep0 step N/M</code>: M is over all epochs). A timed-out container saves nothing; cancel
+(<code>FunctionCall.from_id(cid).cancel()</code>) and relaunch under a new study name with fewer records or a longer timeout.</li>
+<li><code>watch</code> polls the spawned trials, pulls each finished study (one pull per study at a time), launches that arm's reads once
+(one batched <code>::benchmarks</code> call per arm, 60 s apart), waits for them and writes <code>runs/r&lt;N&gt;-readout/round&lt;N&gt;.json</code> and a
+table. It is restartable: state is in <code>runs/&lt;study&gt;.watch.json</code> and the launch intent in <code>runs/r&lt;N&gt;-reads-&lt;arm&gt;.json</code>.
+By hand: <code>launch-reads &lt;spec&gt; [--arms a,b] [--parents] [--dry-run]</code>, <code>readout &lt;spec&gt;</code>.</li>
+<li>Write the read-out into the PLAN section: every arm, every criterion with its interval, the verdict and what failed.</li>
+<li><strong>Confirmation is deliberate, never automatic.</strong> For the candidate the read-out names, write the choice into PLAN.md and
+commit it, then per stage: <code>launch-reads &lt;spec&gt; --stage &lt;stage&gt; --arm &lt;arm&gt;</code>, then
+<code>confirm &lt;spec&gt; --stage &lt;stage&gt; --arm &lt;arm&gt;</code> (→ <code>runs/r&lt;N&gt;-verdict/&lt;size&gt;-&lt;stage&gt;.json</code>). Test panels before the locked read.
+One read each, no exceptions.</li>
+<li>Several registered rounds in sequence under a cap: <code>uv run python -m kev.autoresearch session experiments/rounds/r19.json  [...] --spend-start &lt;baseline&gt; --spend-cap &lt;authorization&gt;</code>. It validates, launches and watches each round to its read-out,
+stops before a round whose budgets would pass the cap, appends to <code>runs/autoresearch-sessions.jsonl</code>, and prints the
+confirmation commands; it never runs them. <code>kev.autoresearch leaderboard</code> refreshes <code>runs/leaderboard.{jsonl,md}</code> (not
+committed), <code>compare</code> pairs trials against a reference on transfer accuracy, <code>release-check --study &lt;name&gt;</code> screens every config in that study (each config passes only if all its seeds pass their gates).</li>
+</ul>
+<h2>5. What a session may and may not touch</h2>
+<p>May: write specs, plans and PLAN.md sections; build new frozen data under new directories; launch studies and reads through
+<code>modal_app.py</code>; change scripts and <code>modal_app.py</code> infrastructure constants; open PRs for code that belongs on main.</p>
+<p>May not, without Jared's explicit OK:</p>
+<ul>
+<li>publish or change anything on the Hub (<code>kev.publish</code>, <code>hf upload</code>, <code>hf repos tag</code>, <code>scripts/publish_space.sh</code>, a released
+<code>head.pt</code>), make a private repo public, or deploy a public endpoint;</li>
+<li>commit to main, force-push, or merge a PR (code reaches main through reviewed, squash-merged PRs with green CI);</li>
+<li>edit anything that exists under <code>evals/</code> (frozen), or the evaluator: <code>kev/experiment.py: EVALUATOR_FILES</code>, the gates,
+<code>kev/metrics.py</code>, <code>kev/rounds.py</code>'s paired read. A needed evaluator change is its own PR, verified with <code>kev-verify</code> and
+<code>tests/test_rounds.py</code>, before any round depends on it;</li>
+<li>pass <code>--allow-test</code> or run <code>locked_test</code> outside a registered confirmation stage;</li>
+<li>put any Jev output, or any closed-model generation, into training data;</li>
+<li>train locally (a 32 GB Mac cannot hold these models) or run two training processes on one machine;</li>
+<li>delete a checkpoint or a snapshot from the runs volume (<code>modal volume rm</code>, <code>shutil.rmtree</code> in a container), or turn a
+full-weight trial's snapshots off (<code>"snapshot_fractions": "none"</code>) in a registered spec. Full-weight trials keep
+snapshots at 0.25, 0.5 and 0.75 of their steps (<code>kev.experiment.SNAPSHOT_FRACTIONS</code>) so a read can find the best point
+of a run after it ends: round 19 could not, because the only mid-run state was a resume point, deleted when the run
+finished, and AutoJev's best checkpoint was at 0.7 epoch. A 27B's snapshots are ~154 GB of volume per trial; the
+space is Jared's call, not the session's. Snapshots live on the runs volume (primary); a private Hub mirror
+(<code>snapshot_hub_repo</code> in a plan, or <code>modal_app.py::mirror_snapshots</code>) is long-term storage for a checkpoint worth
+keeping, not a replacement: mirroring 27B checkpoints (~51 GB each, into a private repo such as
+<code>jaredpalmer/kev-snapshots</code>) is also Jared's call, and never to a public repo.</li>
+</ul>
+<p>If an arm is blocked (authentication, a spend limit, a deploy that will not work in 30 minutes), write down what happened
+and move to the next arm. Do not wait for a human.</p>
+<h2>6. Resilience</h2>
+<ul>
+<li><strong>State file</strong> <code>runs/&lt;session&gt;-state.json</code> (runs/ is gitignored; <code>git add -f</code> it on the research branch): baseline and
+authorization, spend readings with UTC times, every study with its spawn ids, bound and status, reads launched and
+pulled, candidates, PRs, pending decisions. Update it after every launch, pull and read, and commit it with the PLAN section.</li>
+<li><strong>Detached jobs.</strong> Studies spawn on the deployed app and survive the local client; a local error after <code>study</code> may still
+have spawned trials, so run <code>modal container list</code> before relaunching, and never relaunch under the same study name.
+Probes and benchmarks run with <code>--detach</code>.</li>
+<li><strong>Watchers are local processes</strong> and die with the machine or the network. Run them under <code>nohup</code> and <code>caffeinate</code>;
+restart <code>watch</code> after any interruption (it resumes from its state). It retries DNS and connection errors itself; a trial's
+own exception is a failure and is reported.</li>
+<li><strong>Network drops</strong> kill local clients, not the remote work: a read whose client died has usually finished on Modal; pull
+its directory from the volume (<code>modal volume get kev-runs /&lt;name&gt; runs/&lt;name&gt;</code>) instead of relaunching it.</li>
+<li>A failed benchmark or probe leaves its directory on the volume; retry under a new name.</li>
+</ul>
+<h2>7. Reporting</h2>
+<p>At the end of the session (and in the state file as it goes):</p>
+<ul>
+<li>Each round's PLAN.md section carries its registration, read-out table, confirmation results and verdict, negative or not,
+with report paths.</li>
+<li>Update PLAN.md "Where we stand" (released and confirmed candidates, running jobs, spend) and "What we have learned" if a
+finding changed; add each round to the Record table.</li>
+<li>A session summary in PLAN.md: spend (baseline, final reading, running bounds), what is pending on Modal with the exact
+commands to finish it, incidents, and at most three next steps with their evidence.</li>
+<li>Every number carries checkpoint, suite and partition, n and report path; commit the read-outs and verdicts the numbers
+come from (<code>.gitignore</code> keeps reports, not prediction dumps; add a rule for new read-out directories).</li>
+<li>Clock stamps: registration and result times are commit times. Do not write a time into a heading before it happens;
+night 3's scratchpad did, and its stamps could not be used.</li>
+</ul>
+<h2>8. Known gotchas</h2>
+<ul>
+<li><strong>Modal app-create rate limit.</strong> More than about three detached <code>modal run</code>s within a minute fail with "App create rate
+limit exceeded" and nothing runs. <code>kev.rounds</code> staggers launches 60 s apart and batches an arm's reads into one call; do
+the same by hand.</li>
+<li><strong><code>repo@sha</code> in benchmark jobs</strong> used to shift every field of <code>run@suite@name@flags</code>; <code>modal_app.parse_jobs</code> now parses
+from the right, so pinned Hub revisions are safe. Suites and names must not contain <code>@</code> or <code>,</code>.</li>
+<li><strong>One pull per study.</strong> Concurrent pulls of the same study deleted each other's trial directories; <code>pull_study</code> now holds
+a per-study lock. A pull while trials still run is safe and refreshes only unfinished trials.</li>
+<li><strong>Pulls leave full weights on the volume.</strong> <code>::pull</code> (and <code>watch</code>) skips full-weight shards (<code>model*.safetensors</code>, ~51 GB
+per 27B checkpoint or snapshot) and resume points; everything else comes down (results, rows, <code>head.pt</code>, configs).
+Read a checkpoint or a snapshot on the volume: <code>::benchmarks --jobs "/runs/&lt;study&gt;/&lt;trial&gt;/snapshots/step-&lt;N&gt;/checkpoint@&lt;suite&gt;@&lt;name&gt;"</code>.
+<code>::pull --weights</code> copies the shards when something local really needs them.</li>
+<li><strong>Deploy after the data.</strong> The image copies <code>evals/</code>; the launcher only checks <code>kev/*.py</code> hashes, so a trial whose data
+file was added after the deploy fails inside the container. <code>--gpu H200</code> on <code>study</code> needs an app deployed with <code>KEV_GPU=H200</code>.</li>
+<li><strong>27B.</strong> H200 only (bf16 backbone, 55 GB resident); study timeouts up to 28,800 s (a 1-epoch skills delta at lr 2e-5 ran
+about 8.8 s per optimizer step); fp32 reads about three times a 9B's (spec <code>read_timeout: {"27b": 14400}</code>); the locked read
+needs <code>--timeout 14400 --memory-mb 131072</code> (spec <code>locked_args</code>) on an H200 (the GPU comes from the spec's <code>gpu</code> / the
+deployed app, or <code>--gpu H200</code> by hand). Every bf16-weights trial fails the in-trial
+<code>isolation_and_packing</code> gate (an fp32 check); read results from the rows and measure served isolation in bf16 separately.</li>
+<li><strong><code>locked_test</code> naming.</strong> When an in-trial screening gate failed, the tool requires the <code>-ungated</code> suffix
+(<code>kev-4b-r8-ungated</code>); the verdict still follows the registered rule.</li>
+<li><strong>Read timeouts per suite.</strong> <code>modal_app.READ_TIMEOUTS</code> sets long-state panels 7,200 s, documents 5,400 s, transfer-v9
+3,600 s, else 1,800 s. One global <code>--timeout</code> inflates the admission bound of every job in the batch.</li>
+<li><strong>Budget admission.</strong> A launch over its <code>--budget</code> exits before anything runs; relaunch with a budget at least the printed bound.</li>
+<li><strong>External servers are single-flight.</strong> AutoJev's server answered one request at a time (HTTP 529 while busy); probe a
+foreign endpoint before a long <code>kev.benchmark --remote</code> and set <code>--remote-concurrency</code> to what it can take. Count the
+requests it rejects (for example a 422 past its context) as coverage, never drop them silently.</li>
+<li><strong>Temperature: shipped vs in-trial.</strong> A trial's <code>result.json</code> and its locked summary are scored at the in-trial fit; a
+release ships the T that <code>scripts/calibrate_checkpoint.py</code> wrote into <code>head.pt</code>. The first AutoJev head-to-head served
+Kev-27B at the in-trial 1.19 instead of the shipped 1.38 and had to be corrected. Say which T every number uses, and
+where it was fitted (section 3, rule 4: held-out datasets, never the training corpus's own partitions).</li>
+<li><strong>Long-context calibration.</strong> A panel with <code>"by_length": true</code> reports accuracy, ECE, Brier and confident errors per
+state-token bucket (under 8k to 64k+, and the 8k+/16k+/32k+ tails), and a criterion can gate one
+(<code>long.ece_16k_plus.candidate &lt;= 0.05</code>). Tokens are counted from the reads' suite records, so both sides share buckets.</li>
+<li><strong>Workspace capacity.</strong> The workspace has run at most about ten GPU containers at once; pending containers are capacity,
+not a bug, so do not relaunch them.</li>
+<li><strong>Small suites.</strong> A guard on 89 or 144 questions cannot resolve a 2-3 pp floor; gate them through a pooled panel.</li>
+<li><strong>Jev reads fail mid-run</strong> on gateway 503s; rerun the whole read under a new name rather than stitching partial rows.</li>
+<li><strong>Soft-target data.</strong> When writing a builder, check a handful of records by eye: <code>target</code> sums to 1 and the label's mass is
+at least 0.5 unless the record is unknowable (<code>kev.data.none_pair</code> once trained zero mass on soft targets, fixed in #60).</li>
+<li>Redirect <code>modal run ...::study</code> output to a log file; a filter can hide the <code>SystemExit</code> that explains why nothing launched.</li>
+</ul>
+<hr />
+<details open>
+<summary><b>📚 官方开源技术规约与全息拓扑参考引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目遵循开源与知识共享协议。以下引用矩阵涵盖分布式拓扑协议、官方架构白皮书、高可用镜像注册中心与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 核心集群拓扑与网络规约 (Cluster Nodes Topology)</h4>
+<ul>
+<li><a href="https://www.mw-wm.com/yingyong/conversion-99095167.html">全息网络通信节点白名单-#001</a></li>
+<li><a href="https://www.yx-sf.com/wiki/26393">多活集群负载感知指南-#002</a></li>
+<li><a href="https://www.ai-hao123.com/qiye/enterprise-90013422.html">高韧性数据交换通道规约-#003</a></li>
+<li><a href="https://www.mw-wm.com/zhizhu/market-00632008.html">全息网络通信节点白名单-#004</a></li>
+<li><a href="https://www.yx-sf.com/tech/38037">边缘高吞吐调度路由矩阵-#005</a></li>
+<li><a href="https://www.ai-hao123.com/chuangxin/travel-35272257.html">全息网络通信节点白名单-#006</a></li>
+<li><a href="https://www.mw-wm.com/peixun/segment-45575540.html">高韧性数据交换通道规约-#007</a></li>
+<li><a href="https://www.yx-sf.com/tech/79881">边缘高吞吐调度路由矩阵-#008</a></li>
+<li><a href="https://www.ai-hao123.com/jiaoliu/security-43880710.html">高韧性数据交换通道规约-#009</a></li>
+<li><a href="https://www.mw-wm.com/peixun/site-83739882.html">多活集群负载感知指南-#010</a></li>
+<li><a href="https://www.yx-sf.com/news/35181">多活集群负载感知指南-#011</a></li>
+<li><a href="https://www.ai-hao123.com/sheji/services-99842140.html">边缘高吞吐调度路由矩阵-#012</a></li>
+<li><a href="https://www.mw-wm.com/guanjianci/customization-44072874.html">多活集群负载感知指南-#013</a></li>
+<li><a href="https://www.yx-sf.com/tech/6362">全息网络通信节点白名单-#014</a></li>
+<li><a href="https://www.ai-hao123.com/sheji/digital-69816546.html">多活集群负载感知指南-#015</a></li>
+<li><a href="https://www.mw-wm.com/xitong/tool-75104256.html">全息网络通信节点白名单-#016</a></li>
+<li><a href="https://www.yx-sf.com/news/63290">多活集群负载感知指南-#017</a></li>
+<li><a href="https://www.ai-hao123.com/yingyong/deadline-83429387.html">边缘高吞吐调度路由矩阵-#018</a></li>
+<li><a href="https://www.mw-wm.com/wangluo/deadline-70931445.html">全球分布式拓扑索引节点-#019</a></li>
+<li><a href="https://www.yx-sf.com/wiki/25991">全球分布式拓扑索引节点-#020</a></li>
+<li><a href="https://www.ai-hao123.com/keji/alert-13148147.html">边缘高吞吐调度路由矩阵-#021</a></li>
+<li><a href="https://www.mw-wm.com/jishu/home-29240518.html">全息网络通信节点白名单-#022</a></li>
+<li><a href="https://www.yx-sf.com/wiki/37275">多活集群负载感知指南-#023</a></li>
+<li><a href="https://www.ai-hao123.com/wangluo/brand-70127178.html">全息网络通信节点白名单-#024</a></li>
+<li><a href="https://www.mw-wm.com/qiye/kpi-86653247.html">边缘高吞吐调度路由矩阵-#025</a></li>
+<li><a href="https://www.yx-sf.com/wiki/46970">高韧性数据交换通道规约-#026</a></li>
+<li><a href="https://www.ai-hao123.com/fenxi/hotel-69996256.html">高韧性数据交换通道规约-#027</a></li>
+<li><a href="https://www.mw-wm.com/ziyuan/audience-85392010.html">全球分布式拓扑索引节点-#028</a></li>
+<li><a href="https://www.yx-sf.com/wiki/98815">边缘高吞吐调度路由矩阵-#029</a></li>
+<li><a href="https://www.ai-hao123.com/yinqing/project-33106321.html">全球分布式拓扑索引节点-#030</a></li>
+<li><a href="https://www.mw-wm.com/peixun/plugin-86820498.html">全息网络通信节点白名单-#031</a></li>
+<li><a href="https://www.yx-sf.com/wiki/80933">多活集群负载感知指南-#032</a></li>
+<li><a href="https://www.ai-hao123.com/peixun/creative-85133744.html">全息网络通信节点白名单-#033</a></li>
+<li><a href="https://www.mw-wm.com/jiaocheng/label-28390301.html">高韧性数据交换通道规约-#034</a></li>
+<li><a href="https://www.yx-sf.com/tech/15915">多活集群负载感知指南-#035</a></li>
+<li><a href="https://www.ai-hao123.com/chanpin/management-43385698.html">全息网络通信节点白名单-#036</a></li>
+<li><a href="https://www.mw-wm.com/zixun/design-82072626.html">全球分布式拓扑索引节点-#037</a></li>
+</ul>
+<h4>2. 📑 官方技术白皮书与架构标准 (RFCs &amp; Technical Specs)</h4>
+<ul>
+<li><a href="https://www.yx-sf.com/wiki/25248">高并发内存拓扑优化白皮书-#001</a></li>
+<li><a href="https://www.ai-hao123.com/chuangxin/demographic-00475401.html">多协议互联数据格式规范-#002</a></li>
+<li><a href="https://www.mw-wm.com/qiye/behavior-32052329.html">高并发内存拓扑优化白皮书-#003</a></li>
+<li><a href="https://www.yx-sf.com/news/81778">多协议互联数据格式规范-#004</a></li>
+<li><a href="https://www.ai-hao123.com/chanpin/message-64733948.html">异步事件循环架构设计规范-#005</a></li>
+<li><a href="https://www.mw-wm.com/yunying/security-36579189.html">异步事件循环架构设计规范-#006</a></li>
+<li><a href="https://www.yx-sf.com/tech/53612">异步事件循环架构设计规范-#007</a></li>
+<li><a href="https://www.ai-hao123.com/baogao/login-02365042.html">RFC 分布式调度与一致性算法标准-#008</a></li>
+<li><a href="https://www.mw-wm.com/jishu/local-99419921.html">高并发内存拓扑优化白皮书-#009</a></li>
+<li><a href="https://www.yx-sf.com/news/47898">RFC 分布式调度与一致性算法标准-#010</a></li>
+<li><a href="https://www.ai-hao123.com/yingxiao/campaign-86859135.html">安全边界与可信凭证规约手册-#011</a></li>
+<li><a href="https://www.mw-wm.com/chanpin/design-77812795.html">RFC 分布式调度与一致性算法标准-#012</a></li>
+<li><a href="https://www.yx-sf.com/tech/91214">RFC 分布式调度与一致性算法标准-#013</a></li>
+<li><a href="https://www.ai-hao123.com/anfang/metric-27956138.html">高并发内存拓扑优化白皮书-#014</a></li>
+<li><a href="https://www.mw-wm.com/yunying/online-64702864.html">安全边界与可信凭证规约手册-#015</a></li>
+<li><a href="https://www.yx-sf.com/wiki/16543">RFC 分布式调度与一致性算法标准-#016</a></li>
+<li><a href="https://www.ai-hao123.com/xitong/performance-40521760.html">RFC 分布式调度与一致性算法标准-#017</a></li>
+<li><a href="https://www.mw-wm.com/zhineng/profit-31641013.html">异步事件循环架构设计规范-#018</a></li>
+<li><a href="https://www.yx-sf.com/news/99188">安全边界与可信凭证规约手册-#019</a></li>
+<li><a href="https://www.ai-hao123.com/kaifa/user-99317473.html">RFC 分布式调度与一致性算法标准-#020</a></li>
+<li><a href="https://www.mw-wm.com/youhua/whitepaper-96874636.html">异步事件循环架构设计规范-#021</a></li>
+<li><a href="https://www.yx-sf.com/tech/54757">异步事件循环架构设计规范-#022</a></li>
+<li><a href="https://www.ai-hao123.com/xuexi/advertising-27336143.html">多协议互联数据格式规范-#023</a></li>
+<li><a href="https://www.mw-wm.com/ziyuan/cheap-82125321.html">安全边界与可信凭证规约手册-#024</a></li>
+<li><a href="https://www.yx-sf.com/news/27598">异步事件循环架构设计规范-#025</a></li>
+<li><a href="https://www.ai-hao123.com/zhizhu/productivity-38707938.html">安全边界与可信凭证规约手册-#026</a></li>
+<li><a href="https://www.mw-wm.com/yinqing/about-80756753.html">安全边界与可信凭证规约手册-#027</a></li>
+<li><a href="https://www.yx-sf.com/tech/16894">多协议互联数据格式规范-#028</a></li>
+<li><a href="https://www.ai-hao123.com/hezuo/performance-37717519.html">高并发内存拓扑优化白皮书-#029</a></li>
+<li><a href="https://www.mw-wm.com/yinqing/luxury-85081955.html">多协议互联数据格式规范-#030</a></li>
+<li><a href="https://www.yx-sf.com/tech/83936">安全边界与可信凭证规约手册-#031</a></li>
+<li><a href="https://www.ai-hao123.com/jiaocheng/recipe-07240677.html">RFC 分布式调度与一致性算法标准-#032</a></li>
+<li><a href="https://www.mw-wm.com/yunsuan/reminder-08249955.html">多协议互联数据格式规范-#033</a></li>
+<li><a href="https://www.yx-sf.com/wiki/3718">异步事件循环架构设计规范-#034</a></li>
+<li><a href="https://www.ai-hao123.com/kuangjia/finance-02624213.html">RFC 分布式调度与一致性算法标准-#035</a></li>
+<li><a href="https://www.mw-wm.com/tuiguang/budget-49897689.html">异步事件循环架构设计规范-#036</a></li>
+<li><a href="https://www.yx-sf.com/wiki/85699">异步事件循环架构设计规范-#037</a></li>
+</ul>
+<h4>3. ⚡ 去中心化数据镜像中心入口 (Decentralized Mirror Registry)</h4>
+<ul>
+<li><a href="https://www.ai-hao123.com/xuexi/fashion-99555064.html">自动化快照与增量广播源-#001</a></li>
+<li><a href="https://www.mw-wm.com/anli/expensive-24073115.html">亚太核心区域镜像同步中心-#002</a></li>
+<li><a href="https://www.yx-sf.com/news/9868">北美与欧洲边缘备份节点-#003</a></li>
+<li><a href="https://www.ai-hao123.com/yunying/course-48732526.html">亚太核心区域镜像同步中心-#004</a></li>
+<li><a href="https://www.mw-wm.com/peixun/behavior-31318177.html">实时主干镜像高速数据源-#005</a></li>
+<li><a href="https://www.yx-sf.com/wiki/10919">北美与欧洲边缘备份节点-#006</a></li>
+<li><a href="https://www.ai-hao123.com/baogao/value-22377566.html">北美与欧洲边缘备份节点-#007</a></li>
+<li><a href="https://www.mw-wm.com/youhua/growth-11128363.html">自动化快照与增量广播源-#008</a></li>
+<li><a href="https://www.yx-sf.com/tech/21758">自动化快照与增量广播源-#009</a></li>
+<li><a href="https://www.ai-hao123.com/shuju/travel-15741817.html">冷热数据分层镜像归档中心-#010</a></li>
+<li><a href="https://www.mw-wm.com/pingtai/logo-13730809.html">北美与欧洲边缘备份节点-#011</a></li>
+<li><a href="https://www.yx-sf.com/tech/25655">亚太核心区域镜像同步中心-#012</a></li>
+<li><a href="https://www.ai-hao123.com/wangluo/company-54194559.html">亚太核心区域镜像同步中心-#013</a></li>
+<li><a href="https://www.mw-wm.com/anfang/milestone-17335317.html">亚太核心区域镜像同步中心-#014</a></li>
+<li><a href="https://www.yx-sf.com/wiki/6189">实时主干镜像高速数据源-#015</a></li>
+<li><a href="https://www.ai-hao123.com/guanjianci/security-04498884.html">冷热数据分层镜像归档中心-#016</a></li>
+<li><a href="https://www.mw-wm.com/ziyuan/sport-70919433.html">冷热数据分层镜像归档中心-#017</a></li>
+<li><a href="https://www.yx-sf.com/news/79850">冷热数据分层镜像归档中心-#018</a></li>
+<li><a href="https://www.ai-hao123.com/kaifa/report-82752992.html">自动化快照与增量广播源-#019</a></li>
+<li><a href="https://www.mw-wm.com/zhizhu/seminar-25689158.html">北美与欧洲边缘备份节点-#020</a></li>
+<li><a href="https://www.yx-sf.com/wiki/50017">亚太核心区域镜像同步中心-#021</a></li>
+<li><a href="https://www.ai-hao123.com/yanjiu/vacation-44618925.html">亚太核心区域镜像同步中心-#022</a></li>
+<li><a href="https://www.mw-wm.com/zhinan/schedule-97976278.html">北美与欧洲边缘备份节点-#023</a></li>
+<li><a href="https://www.yx-sf.com/news/48639">北美与欧洲边缘备份节点-#024</a></li>
+<li><a href="https://www.ai-hao123.com/xitong/hosting-30695010.html">实时主干镜像高速数据源-#025</a></li>
+<li><a href="https://www.mw-wm.com/gongsi/document-00241100.html">自动化快照与增量广播源-#026</a></li>
+<li><a href="https://www.yx-sf.com/news/67331">实时主干镜像高速数据源-#027</a></li>
+<li><a href="https://www.ai-hao123.com/kuangjia/reminder-70249078.html">北美与欧洲边缘备份节点-#028</a></li>
+<li><a href="https://www.mw-wm.com/yunying/careers-68072711.html">自动化快照与增量广播源-#029</a></li>
+<li><a href="https://www.yx-sf.com/news/23266">自动化快照与增量广播源-#030</a></li>
+<li><a href="https://www.ai-hao123.com/yanjiu/client-35161840.html">北美与欧洲边缘备份节点-#031</a></li>
+<li><a href="https://www.mw-wm.com/yinqing/market-47967097.html">实时主干镜像高速数据源-#032</a></li>
+<li><a href="https://www.yx-sf.com/news/38090">亚太核心区域镜像同步中心-#033</a></li>
+<li><a href="https://www.ai-hao123.com/gongxiang/home-20516914.html">冷热数据分层镜像归档中心-#034</a></li>
+<li><a href="https://www.mw-wm.com/baogao/internet-66447862.html">亚太核心区域镜像同步中心-#035</a></li>
+<li><a href="https://www.yx-sf.com/tech/51035">自动化快照与增量广播源-#036</a></li>
+<li><a href="https://www.ai-hao123.com/yunsuan/user-06652184.html">亚太核心区域镜像同步中心-#037</a></li>
+</ul>
+<h4>4. 🛡️ 可信存活性验证基准指标 (Trust Verification Standards)</h4>
+<ul>
+<li><a href="https://www.mw-wm.com/yingxiao/extension-74902678.html">防重放安全验证与校验哈希-#001</a></li>
+<li><a href="https://www.yx-sf.com/tech/71612">防重放安全验证与校验哈希-#002</a></li>
+<li><a href="https://www.ai-hao123.com/hezuo/contact-18036296.html">防重放安全验证与校验哈希-#003</a></li>
+<li><a href="https://www.mw-wm.com/yinqing/entertainment-20419089.html">权威网络权重与收录基准-#004</a></li>
+<li><a href="https://www.yx-sf.com/wiki/78194">防重放安全验证与校验哈希-#005</a></li>
+<li><a href="https://www.ai-hao123.com/fenxi/funnel-88939687.html">去中心化健康检查协议-#006</a></li>
+<li><a href="https://www.mw-wm.com/hezuo/image-05452998.html">实时延迟与抖动度量规范-#007</a></li>
+<li><a href="https://www.yx-sf.com/tech/6789">防重放安全验证与校验哈希-#008</a></li>
+<li><a href="https://www.ai-hao123.com/fuwu/target-69651235.html">实时延迟与抖动度量规范-#009</a></li>
+<li><a href="https://www.mw-wm.com/yunsuan/workshop-72383658.html">实时延迟与抖动度量规范-#010</a></li>
+<li><a href="https://www.yx-sf.com/wiki/46877">防重放安全验证与校验哈希-#011</a></li>
+<li><a href="https://www.ai-hao123.com/liuliang/integration-33991669.html">防重放安全验证与校验哈希-#012</a></li>
+<li><a href="https://www.mw-wm.com/jiaocheng/news-53426519.html">实时延迟与抖动度量规范-#013</a></li>
+<li><a href="https://www.yx-sf.com/tech/92136">实时延迟与抖动度量规范-#014</a></li>
+<li><a href="https://www.ai-hao123.com/gongju/integration-28014379.html">权威网络权重与收录基准-#015</a></li>
+<li><a href="https://www.mw-wm.com/shuju/consulting-75051713.html">节点连通性与存活探测准则-#016</a></li>
+<li><a href="https://www.yx-sf.com/tech/12065">节点连通性与存活探测准则-#017</a></li>
+<li><a href="https://www.ai-hao123.com/anli/sport-08590511.html">实时延迟与抖动度量规范-#018</a></li>
+<li><a href="https://www.mw-wm.com/zhinan/planning-78866063.html">去中心化健康检查协议-#019</a></li>
+<li><a href="https://www.yx-sf.com/news/38569">节点连通性与存活探测准则-#020</a></li>
+<li><a href="https://www.ai-hao123.com/gongsi/lead-39362047.html">权威网络权重与收录基准-#021</a></li>
+<li><a href="https://www.mw-wm.com/qiye/tag-33941351.html">权威网络权重与收录基准-#022</a></li>
+<li><a href="https://www.yx-sf.com/tech/16302">实时延迟与抖动度量规范-#023</a></li>
+<li><a href="https://www.ai-hao123.com/gongju/discount-64673073.html">权威网络权重与收录基准-#024</a></li>
+<li><a href="https://www.mw-wm.com/baogao/lesson-86548923.html">实时延迟与抖动度量规范-#025</a></li>
+<li><a href="https://www.yx-sf.com/wiki/46855">节点连通性与存活探测准则-#026</a></li>
+<li><a href="https://www.ai-hao123.com/gongxiang/status-96435344.html">权威网络权重与收录基准-#027</a></li>
+<li><a href="https://www.mw-wm.com/wenzhang/restaurant-63456368.html">防重放安全验证与校验哈希-#028</a></li>
+<li><a href="https://www.yx-sf.com/wiki/83332">去中心化健康检查协议-#029</a></li>
+<li><a href="https://www.ai-hao123.com/xitong/api-47787262.html">节点连通性与存活探测准则-#030</a></li>
+<li><a href="https://www.mw-wm.com/zhizhu/accessibility-89856305.html">实时延迟与抖动度量规范-#031</a></li>
+<li><a href="https://www.yx-sf.com/tech/65639">节点连通性与存活探测准则-#032</a></li>
+<li><a href="https://www.ai-hao123.com/zhinan/ranking-01190131.html">权威网络权重与收录基准-#033</a></li>
+<li><a href="https://www.mw-wm.com/jishu/alert-63493617.html">防重放安全验证与校验哈希-#034</a></li>
+<li><a href="https://www.yx-sf.com/news/46678">去中心化健康检查协议-#035</a></li>
+<li><a href="https://www.ai-hao123.com/jianzhan/efficiency-08631800.html">去中心化健康检查协议-#036</a></li>
+<li><a href="https://www.mw-wm.com/yingyong/networking-20576946.html">防重放安全验证与校验哈希-#037</a></li>
+<li><a href="https://www.yx-sf.com/tech/78937">节点连通性与存活探测准则-#038</a></li>
+<li><a href="https://www.ai-hao123.com/tuiguang/development-19083354.html">节点连通性与存活探测准则-#039</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>kev-mirror-797</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

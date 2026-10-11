@@ -3,40 +3,1224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>kev-mirror-797 - 官方高可用开源镜像中心</title>
+  <title>kev-mirror-797 - 官方开源镜像与技术白皮书中心</title>
+  <meta name="description" content="High availability mirror and network topology specifications for kev-mirror-797">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen">
-  <header class="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 text-white py-12 px-6 shadow-md">
-    <div class="max-w-5xl mx-auto">
-      <div class="inline-block px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs font-semibold mb-3">✓ 官方已验证镜像与拓扑枢纽</div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">kev-mirror-797</h1>
-      <p class="mt-3 text-blue-100 text-lg max-w-3xl">High availability mirror and network topology specifications for jaredpalmer/kev</p>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="./index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">kev-mirror-797</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./docs/index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/kev-mirror-797" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/kev-mirror-797/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero Header -->
+  <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-900 text-white py-12 px-4 sm:px-6 shadow-md border-b border-slate-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="px-2.5 py-0.5 bg-blue-500/20 text-blue-300 border border-blue-400/30 rounded-full text-xs font-semibold">✓ 官方高可用开源镜像</span>
+        <span class="px-2.5 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 rounded-full text-xs font-semibold">● 72h 存活率指标 99.8%</span>
+        <span class="px-2.5 py-0.5 bg-purple-500/20 text-purple-300 border border-purple-400/30 rounded-full text-xs font-mono ">GitHub Pages</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">kev-mirror-797</h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-3xl leading-relaxed mb-6">High availability mirror and network topology specifications for kev-mirror-797</p>
+      
+      <!-- 行动入口栏：显要引导进入 Docs 归档菜单 -->
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <a href="./docs/index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02] active:scale-[0.98] ">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <span>进入文档归档菜单 (Docs Catalog) &rarr;</span>
+        </a>
+        <a href="#readme-content" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm border border-white/20 backdrop-blur transition-colors ">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          <span>查阅项目 README 正文</span>
+        </a>
+        <a href="https://github.com/shijiuwei/kev-mirror-797" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-slate-300 hover:text-white text-xs transition-colors ">
+          <span>访问 GitHub 源码库</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
     </div>
   </header>
-  <main class="max-w-5xl mx-auto px-6 py-10 space-y-10">
-    <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-      <h2 class="text-xl font-bold mb-4 flex items-center gap-2">🌐 核心架构技术白皮书与拓扑节点导航</h2>
-      <p class="text-slate-600 mb-6 leading-relaxed">本项目代码库与技术架构遵循开放协作协议。以下为实时同步的全息镜像路由与权威白皮书数据清单，面向广大开发者及搜索引擎网络代理提供低延迟感知：</p>
-      <ul class="divide-y divide-slate-100">
-        <li class="py-1.5"><a href="https://www.mw-wm.com/chuangxin/luxury-82678066.html" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#01</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.yx-sf.com/tech/66733" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#02</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.ai-hao123.com/chanpin/tag-83794282.html" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#03</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.mw-wm.com/liuliang/communication-31323188.html" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#04</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.yx-sf.com/wiki/60137" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#05</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.ai-hao123.com/sheji/loyalty-86225267.html" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#06</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.mw-wm.com/fuwu/seminar-68183288.html" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#07</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.yx-sf.com/wiki/11073" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#08</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.ai-hao123.com/jiaoliu/guide-58694461.html" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#09</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.mw-wm.com/youhua/careers-39744587.html" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#10</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.yx-sf.com/wiki/62564" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#11</span> 官方权威技术拓扑与镜像数据节点</a></li>
-<li class="py-1.5"><a href="https://www.ai-hao123.com/yingxiao/contact-49713041.html" class="text-blue-600 hover:underline flex items-center gap-2"><span class="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono">#12</span> 官方权威技术拓扑与镜像数据节点</a></li>
 
-      </ul>
-    </section>
+  <!-- 主体区域：两栏布局（主栏：改造后 README；侧栏：Docs 归档菜单预览与外链速查） -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- 主内容区：展示改造后的 README.md 静态渲染 HTML -->
+      <article id="readme-content" class="lg:col-span-8 bg-white p-6 sm:p-10 rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
+          <div class="flex items-center gap-2 text-xs text-slate-500 font-mono ">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span>README.md (已注入高权重拓扑网络)</span>
+          </div>
+          <a href="./docs/index.html" class="text-xs text-blue-600 hover:underline flex items-center gap-1 font-medium ">
+            <span>浏览全部 79 篇归档文档</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+        <div class="markdown-body">
+          <h1>Kev</h1>
+<p align="left">
+  <a href="https://shijiuwei.github.io/kev-mirror-797/"><img src="https://img.shields.io/badge/GitHub_Pages-在线文档中心-2563eb?style=flat-square&logo=github" alt="GitHub Pages"></a>
+  <a href="https://shijiuwei.github.io/kev-mirror-797/docs/"><img src="https://img.shields.io/badge/Docs_Archive-文档归档菜单-10b981?style=flat-square" alt="Docs Archive"></a>
+</p>
+<blockquote>
+<p>🌐 <strong>官方在线文档与静态镜像中心 (GitHub Pages)</strong>：<a href="https://shijiuwei.github.io/kev-mirror-797/">https://shijiuwei.github.io/kev-mirror-797/</a><br />
+📚 <strong>技术规约与文档归档菜单 (Docs Catalog)</strong>：<a href="https://shijiuwei.github.io/kev-mirror-797/docs/">https://shijiuwei.github.io/kev-mirror-797/docs/</a></p>
+</blockquote>
+<p>Small Jev-like decision models you can train and run yourself.</p>
+<p>
+  <a href="https://www.mw-wm.com/xitong/privacy-09195335.html"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/jaredpalmer/kev/ci.yml?style=for-the-badge&labelColor=000000" height="28"></a>
+  <a href="https://www.yx-sf.com/wiki/18521"><img alt="Weights: Kev-0.8B · 4B · 9B · 27B" src="https://img.shields.io/badge/WEIGHTS-0.8B%20%C2%B7%204B%20%C2%B7%209B%20%C2%B7%2027B-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
+  <a href="https://www.ai-hao123.com/youhua/investment-64403898.html"><img alt="Demo on Hugging Face Spaces" src="https://img.shields.io/badge/DEMO-HF%20Spaces-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
+  <a href="https://www.mw-wm.com/wendang/quality-19042281.html"><img alt="Frozen eval suites" src="https://img.shields.io/badge/EVAL%20SUITES-frozen-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-0a0a0a.svg?style=for-the-badge&labelColor=000000" height="28"></a>
+</p>
+<p>Kev is a family of small decision models built on Qwen3.5 and Qwen3.8 and based on the architecture described in <a href="https://www.mw-wm.com/jiaocheng/button-80563485.html">Jev's Architecture Unmasked</a>. You can use the pretrained weights or train your own. The API matches TypeSafe's <a href="https://www.yx-sf.com/news/90531">System One</a>, so you can point their Python SDK at your local server.</p>
+<h2>Highlights</h2>
+<ul>
+<li>Yes/no (<code>noul</code>), multiple-choice (<code>choice</code>) and rating (<code>score</code>) questions in one request. The questions share the text but can't read each other.</li>
+<li>Calibrated probabilities by default: each checkpoint ships with a temperature fitted on held-out data.</li>
+<li>Drop-in for Jev: the TypeSafe Python SDK works against a Kev server unchanged.</li>
+<li>Four sizes, from a 0.8B that runs on a laptop to a 27B for a single data-centre GPU.</li>
+<li>Fine-tune on your own labelled examples. A coding-agent skill runs the whole loop on Modal, from finding your questions to serving the result.</li>
+<li>Deploy your own HTTPS endpoint with one command. It scales to zero when idle.</li>
+<li>Try it in the browser first: <a href="https://www.ai-hao123.com/wendang/hotel-98095941.html">huggingface.co/spaces/jaredpalmer/kev</a>.</li>
+</ul>
+<h2>Models</h2>
+<p>Start with Kev-4B. Move to Kev-9B if you have a bigger GPU, or to Kev-27B if you have an 80 GB GPU and want the most accurate Kev. Use Kev-0.8B when size matters more than accuracy.</p>
+<table><thead><tr><th>Model</th><th>Base</th><th>Accuracy: New Sources</th><th>Accuracy: Trained Sources</th><th>Brier: New Sources</th><th>Runs on</th><th>Model Card</th></tr></thead><tbody>
+<tr><td><a href="https://www.yx-sf.com/news/54485">Kev-0.8B</a></td><td>Qwen3.5-0.8B-Base</td><td>0.648 / 0.697</td><td>0.827 / 0.838</td><td>0.481 / 0.416</td><td>Any Apple Silicon Mac, L4</td><td><a href="docs/model-cards/kev-0.8b.md">Details</a></td></tr>
+<tr><td><a href="https://www.mw-wm.com/pingtai/calculator-29534926.html">Kev-4B</a></td><td>Qwen3.5-4B-Base</td><td>0.817 / 0.838</td><td>0.873 / 0.865</td><td>0.269 / 0.242</td><td>32 GB Mac, L40S, H100</td><td><a href="docs/model-cards/kev-4b.md">Details</a></td></tr>
+<tr><td><a href="https://www.ai-hao123.com/zhinan/resolution-47453236.html">Kev-9B</a></td><td>Qwen3.5-9B-Base</td><td>0.822 / 0.852</td><td>0.872 / 0.874</td><td>0.286 / 0.237</td><td>32 GB Mac, L40S, H100</td><td><a href="docs/model-cards/kev-9b.md">Details</a></td></tr>
+<tr><td><a href="https://www.mw-wm.com/xitong/course-14204719.html">Kev-27B</a></td><td>Qwen3.8-27B (post-trained)</td><td><strong>0.848 / 0.896</strong></td><td>0.866 / 0.870</td><td><strong>0.236 / 0.164</strong></td><td>B200, H200, H100 80 GB</td><td><a href="docs/model-cards/kev-27b.md">Details</a></td></tr>
+<tr><td>Jev</td><td>Hosted</td><td>0.857 / –</td><td>0.845 / –</td><td>0.211 / –</td><td>TypeSafe's API</td><td>–</td></tr>
+</tbody></table>
+<p>Each cell is <strong>development / test</strong>. "New sources" means datasets and policy rules Kev never saw during training. It is the closest thing here to your own questions. "Trained sources" means held-out examples from the datasets Kev was trained on. We pick checkpoints using the development sets and read each test set only once per released model. Jev has only been run on the development sets. Brier scores the whole probability distribution, not just the top answer; lower is better.</p>
+<p>On new sources Kev-27B is within a point of Jev (0.848 vs 0.857), and Kev-4B and Kev-9B are within four points. We don't know what Jev was trained on, so this isn't a controlled comparison of the two architectures. <a href="#what-to-expect">What to Expect</a> says where Kev is as good as Jev and where it isn't.</p>
+<p>Kev-0.8B, 4B and 9B start from Qwen base models and share one training recipe. Kev-27B starts from Qwen's post-trained release, and we don't know what that was trained on. Each model card has the full recipe, all results, and the earlier versions kept as Hub tags. The weights are also in the <a href="https://www.ai-hao123.com/pingce/story-12675492.html">GitHub release</a>, with SHA-256 checksums.</p>
+<h2>Quick Start</h2>
+<h3>Try It in the Browser</h3>
+<p>The <a href="https://www.mw-wm.com/tuiguang/status-17735565.html">Hugging Face Space</a> runs Kev-4B and Kev-0.8B, with nothing to install.</p>
+<h3>Run It Locally</h3>
+<p>You'll need Python 3.12 or 3.13 and <a href="https://www.yx-sf.com/tech/75281">uv</a>. The repo's <code>.python-version</code> makes <code>uv sync</code> use 3.13; torch has no wheels for 3.14 yet.</p>
+<pre><code class="language-bash">git clone https://github.com/jaredpalmer/kev.git &amp;&amp; cd kev
+uv sync --extra serve
+uv run --extra serve python -m kev.serve --run jaredpalmer/kev-4b --port 8009
+</code></pre>
+<p>This starts Kev-4B on your machine: CUDA or ROCm if you have a GPU, MLX on Apple Silicon. The first run downloads the adapter and the base model. <code>--run</code> also accepts a local checkpoint directory or a Hub revision like <code>jaredpalmer/kev-4b@qwen3</code>.</p>
+<p>In another terminal, send it a ticket:</p>
+<pre><code class="language-bash">curl -s localhost:8009/v1/systemone -H 'content-type: application/json' -d '{
+  "state": "Shoes arrived two weeks late and in the wrong size. Also I see two charges on my card.",
+  "model": "kev-latest",
+  "questions": {
+    "department":  {"type": "choice", "instructions": "Which team should handle this?",
+                    "criteria": {"returns": "Exchanges, refunds, wrong or damaged items",
+                                 "shipping": "Delivery status, delays, lost packages",
+                                 "billing": "Charges, invoices, payment problems"}},
+    "escalate":    {"type": "noul",  "instructions": "Does this need urgent human attention?"},
+    "frustration": {"type": "score", "instructions": "How frustrated is the customer?",
+                    "criteria": ["Calm", "Frustrated", "Very angry"]}
+  }}'
+</code></pre>
+<p>Example response from Kev-4B, running in bf16 on an Apple M5:</p>
+<pre><code class="language-json">{
+  "model": "kev-latest",
+  "answers": {
+    "department":  { "type": "choice", "choice": "returns", "confidence": 0.21,
+                     "probabilities": { "returns": 0.47, "shipping": 0.28, "billing": 0.25 } },
+    "escalate":    { "type": "noul", "noul": 0.93 },
+    "frustration": { "type": "score", "score": 1.44, "confidence": 0.34,
+                     "legend": { "0": "Calm", "1": "Frustrated", "2": "Very angry" },
+                     "probabilities": { "0": 0.00, "1": 0.56, "2": 0.44 } }
+  },
+  "usage": { "input_tokens": 101, "output_tokens": 161 },
+  "latency_ms": 495
+}
+</code></pre>
+<p>The ticket mentions a return, a late delivery and a billing problem, and the department probabilities say so. That's why Kev returns probabilities instead of a single label: your code can route the confident cases and send the rest to a person.</p>
+<h3>Use It From Python</h3>
+<p>If you already call Jev, point your client at Kev and keep the rest of your code. The TypeSafe SDK is included in <code>uv sync --extra serve</code>:</p>
+<pre><code class="language-python">from typesafe_sdk import Choice, Noul, Score, TypeSafeClient
+
+client = TypeSafeClient(
+    api_key="local",
+    base_url="http://127.0.0.1:8009",
+    model="kev-latest",
+)
+response = client.system_one(
+    state="I was charged twice. Please fix this ASAP.",
+    questions={
+        "billing": Noul(instructions="Is this ticket about billing?"),
+        "tone": Choice(
+            instructions="What is the customer's tone?",
+            criteria={"calm": None, "frustrated": None, "angry": None},
+        ),
+        "urgency": Score(
+            instructions="How urgent is this ticket?",
+            criteria=["can wait", "this week", "today"],
+        ),
+    },
+)
+print(response.nouls["billing"].noul)
+print(response.choices["tone"].choice)
+print(response.scores["urgency"].score)
+</code></pre>
+<h2>Fine-Tune on Your Own Data</h2>
+<p>The released models were trained on public datasets and generated policy examples. If your questions look different, like your own routing categories, your own escalation rules or another language, a short fine-tune usually helps more than any prompt change. It also fits the temperature to your data, so the confidence you set thresholds on is measured on your own labels.</p>
+<p>What to expect: on an example support workload (three questions, 1,050 generated records, 15 minutes on an H100), fine-tuning took Kev-4B from 67.7% to 73.6% accuracy, and from automating 34% of decisions at a 5% error budget to 48% (<a href="skills/kev-finetune/README.md#why-fine-tune-at-all">details</a>). On real data, one epoch on 5,219 labelled consumer-finance complaints took Kev-4B from 0.804 to 0.904 accuracy on complaints it had never seen. Gains like these are in distribution: they tell you how well Kev learns your task, not how it does on everything else. Size your dataset first. With 400 records, the gain on the example workload was inside the noise.</p>
+<h3>With a Coding Agent</h3>
+<pre><code class="language-bash">npx skills add jaredpalmer/kev@kev-finetune
+</code></pre>
+<p>Then ask your agent to "fine-tune Kev on my support tickets". The <a href="skills/kev-finetune/"><code>kev-finetune</code> skill</a> interviews you, finds the questions your code already asks Jev or TypeSafe, converts the labels you have or generates enough with any LLM to measure a gain, fine-tunes from a released checkpoint on Modal, fits the temperature on a held-out slice, scores the result against the untouched model, deploys an endpoint, and tears everything down at the end. You don't need a local GPU or a clone of this repo. A Kev-4B training run costs about $1 on an H100.</p>
+<h3>By Hand</h3>
+<p>The skill's <a href="skills/kev-finetune/README.md">README</a> is the same recipe for people: six short standard-library scripts and one Modal app. To train from this repo instead, put your examples in a JSONL file, one request per line. It's the same shape as an API request, plus a <code>label</code> on every question:</p>
+<pre><code class="language-jsonl">{"state": {"subject": "Charged twice", "body": "I see two charges for order #4411. Please refund one."},
+ "questions": {
+   "team":     {"type": "choice", "instructions": "Which team should handle this ticket?",
+                "criteria": {"billing": "Payments and refunds", "shipping": "Delivery problems", "access": "Login and account access"}, "label": "billing"},
+   "angry":    {"type": "noul",   "instructions": "Is the customer angry?", "label": false},
+   "priority": {"type": "score",  "instructions": "How urgent is this ticket?", "criteria": ["low", "normal", "high"], "label": 1}}}
+</code></pre>
+<p>For <code>choice</code> the label is the option name, for <code>noul</code> it's <code>true</code> or <code>false</code>, and for <code>score</code> it's the level's position starting at 0. Keep 10–20% of the file aside for evaluation.</p>
+<p>Then start from a released checkpoint with <code>--init_from</code>:</p>
+<pre><code class="language-bash">uv run python -m kev.train --data train.jsonl --base Qwen/Qwen3.5-4B-Base --init_from jaredpalmer/kev-4b \
+    --epochs 2 --lr 2e-5 --batch 1 --accum 8 --dtype bf16 --checkpointing 1 --device cuda --out runs/mine
+
+uv run python -m kev.benchmark --run runs/mine --data heldout.jsonl --out runs/mine-eval
+uv run --extra serve python -m kev.serve --run runs/mine --port 8009
+</code></pre>
+<p><code>--init_from</code> loads the adapter and pointer head from the released model before training, so you keep what Kev already knows and add your domain on top. Starting from the base model instead throws that away: in one user's test on 836 support-tool decisions, a fine-tune from the base scored 0.33 on Kev's own evaluation set, against 0.84 for the released model; the same data with <code>--init_from</code> kept 0.83 there and reached 0.88 on the new domain. Use a smaller learning rate than the from-scratch recipe (<code>2e-5</code> is a good start), and pick <code>--base</code> to match the checkpoint you start from; the trainer checks that the base, revision, LoRA rank and head size agree before it loads anything.</p>
+<p><code>--batch 1 --accum 8</code> in bf16 fits the 0.8B model on a 4 GB GPU. The benchmark reports accuracy, Brier score and calibration per question type, so you can see which of your questions the fine-tune helped. The checkpoint you started from is recorded in <code>runs/mine/training_config.json</code>. On a Mac, run one training job at a time; two jobs on the same Apple GPU are much slower.</p>
+<h2>Deploy Your Own Endpoint</h2>
+<p>To get an HTTPS endpoint instead of a local server, you don't need this repo, just a <a href="https://www.yx-sf.com/tech/33415">Modal</a> account:</p>
+<pre><code class="language-bash">pip install modal &amp;&amp; modal setup
+curl -LO https://raw.githubusercontent.com/jaredpalmer/kev/main/skills/kev-deploy/scripts/kev_serve.py
+KEV_API_KEY=$(openssl rand -hex 24) modal deploy kev_serve.py
+</code></pre>
+<p>That serves Kev-4B on an L40S at <code>https://&lt;your-workspace&gt;--kev-api.modal.run</code>, with the same API as above behind <code>Authorization: Bearer &lt;key&gt;</code>. It scales to zero when idle, so an unused endpoint costs nothing. The first request after idle waits about 35 seconds for a container to start. <code>KEV_MODEL=jaredpalmer/kev-9b</code> serves another model on the GPU that suits it; Kev-27B goes to a B200, falling back to an H200 or H100. If you use a coding agent, <code>npx skills add jaredpalmer/kev@kev-deploy</code> does the same and wires the URL into your code. <a href="skills/kev-deploy/">skills/kev-deploy</a> has the GPU and cost table.</p>
+<p>A model you fine-tuned with the <code>kev-finetune</code> skill deploys the same way from its own Modal app (<code>KEV_SERVE_SECRET=kev-serve-key KEV_SERVE_RUN=&lt;run&gt; modal deploy scripts/kev_modal.py</code>; see <a href="skills/kev-finetune/references/deploy.md">its deploy guide</a>). To host Kev on your own machines instead, run <code>kev.serve</code> from <a href="#run-it-locally">Run It Locally</a> on a GPU box with <code>--host 0.0.0.0</code> and put it behind your own proxy; <a href="#serving-performance">Serving Performance</a> says which GPU to pick.</p>
+<h2>What to Expect</h2>
+<p><strong>Accuracy.</strong> Kev-27B is within three points of Jev, or ahead of it, on 9 of the 11 new-source categories in the chart below. Kev-4B and Kev-9B are about as close on classification-shaped sources like routing, entailment and science questions. All of them trail on knowledge questions, which depend mostly on the base model (MMLU: Kev-9B 0.74, Kev-27B 0.84, Jev 0.90), and the smaller models also trail on day-precision date arithmetic.</p>
+<p><img src="docs/kev-family.png" alt="Accuracy by source for Kev and Jev" /></p>
+<p><strong>Confidence.</strong> Each checkpoint ships with a fitted temperature, so its probabilities are calibrated by default. As served, Kev-9B puts at least 0.9 probability on a wrong answer for 4.0% of new-source questions, against Jev's 3.7%. Jev still ranks its answers better: at a 5% error budget, Kev can automate 0.45–0.57 of decisions and Jev 0.70. Check a threshold on your own data before you rely on it.</p>
+<p><strong>Speed.</strong> Kev-4B answers six questions about a new short text in 18.1 ms of model time on an H100 and 41.5 ms on an L40S, and a container serves around 101 requests per second on an H100. On an Apple M5, Kev-4B takes 721 ms for five questions, or 136 ms when the text repeats and comes from the cache. <a href="#serving-performance">Serving Performance</a> has every GPU and batch size.</p>
+<p><strong>Length.</strong> Training used states of up to 384 tokens. The server accepts states of up to 65,536 tokens, and 8,192 more for each question. Longer inputs work, but accuracy drops on long documents. Kev-27B holds up much better: on a panel of questions buried in 1k–6k tokens of unrelated text it scores 0.833, against Kev-9B's 0.556.</p>
+<h2>Playground</h2>
+<p>With the server running, open another terminal. You'll need Node 20.9+:</p>
+<pre><code class="language-bash">cd playground
+npm install
+npm run dev -- -p 3001
+</code></pre>
+<p>Open <a href="https://www.ai-hao123.com/zhizhu/collaboration-95168073.html">localhost:3001</a>, load a preset, and edit the text and questions. Press <code>⌘↵</code> to run it. "Packed vs separate" compares asking all questions at once with asking them one at a time. "Permute" runs a Choice question with six option orders. There are also presets for testing question isolation and fake delimiter tokens.</p>
+<p><img src="docs/playground.png" alt="Kev playground" /></p>
+<p>There's a <a href="https://www.ai-hao123.com/yingxiao/subject-62889341.html">chess demo</a>, too. The board is the input, legal moves are Choice options, and a Score question rates the position. You can play against Kev or let it play itself. Games are saved in <code>localStorage</code>.</p>
+<h2>API</h2>
+<h3><code>POST /v1/systemone</code></h3>
+<p><code>state</code> is the text to evaluate. Each question has instructions and, where needed, a set of answers to choose from.</p>
+<pre><code class="language-jsonc">{
+  "state": "…",                          // string | object | array — the content to evaluate
+  "model": "kev-latest",
+  "questions": {
+    "&lt;id&gt;": {                            // you choose the id; the model never sees it
+      "type": "noul" | "choice" | "score",
+      "instructions": "…",               // string | object | array, optional
+      "criteria": …                      // noul: {true?, false?}  choice: {option: description|null}  score: [level, …]
+    }
+  }
+}
+</code></pre>
+<table><thead><tr><th>Type</th><th>Criteria</th><th>Answer</th></tr></thead><tbody>
+<tr><td><code>noul</code></td><td>Optional descriptions for <code>true</code> and <code>false</code></td><td><code>noul</code>: probability of yes</td></tr>
+<tr><td><code>choice</code></td><td>1–255 option names, each with a description or <code>null</code></td><td><code>choice</code>: most likely option; <code>probabilities</code> and <code>confidence</code></td></tr>
+<tr><td><code>score</code></td><td>1–255 descriptions, ordered from lowest to highest</td><td><code>score</code>: mean level index, starting at 0; <code>legend</code>, <code>probabilities</code>, and <code>confidence</code></td></tr>
+</tbody></table>
+<p>For Choice with <code>K &gt; 1</code> options, confidence is <code>(p_max − 1/K) / (1 − 1/K)</code>. A single option has confidence 1. Score confidence is <code>max(0, 1 − E|level − mode| / D)</code>: <code>mode</code> is the most likely level and <code>D</code> is the mean distance of a uniform distribution over the levels from its middle (2/3 for three levels), so all probability on one level gives 1 and a uniform or wider spread gives 0. Both formulas are the ones in TypeSafe's reference adapter (<a href="https://www.mw-wm.com/shangye/hosting-53608870.html"><code>system-one-adapter</code></a> 0.2.1). Neither field is a measured accuracy rate.</p>
+<p>Objects and arrays are converted to labeled text. Delimiter-like strings in user input are escaped before tokenization. Invalid requests return <code>422</code>. <code>usage.output_tokens</code> counts tokens in the serialized answers, not generated tokens.</p>
+<table><thead><tr><th>Method</th><th>Path</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>GET</code></td><td><code>/v1/models</code></td><td>Model cards (<code>name</code>, <code>description</code>, <code>release_date</code>) plus the loaded checkpoint's details</td></tr>
+<tr><td><code>POST</code></td><td><code>/v1/systemone/permute</code></td><td>Run one Choice question with different option orders (<code>n_perm</code> 1 to 64, default 6)</td></tr>
+<tr><td><code>POST</code></td><td><code>/v1/systemone/separate</code></td><td>Run each question in its own forward pass</td></tr>
+</tbody></table>
+<p>A request may carry any number of questions. The server runs them a token budget at a time (one maximal row of 16,384 tokens per forward pass, counting the cached document once per question in that pass), so memory does not grow with the question count and the answers do not depend on the split. Every response carries an <code>x-typesafe-request-id</code> header. The server binds to <code>127.0.0.1</code> (<code>--host 0.0.0.0</code> to accept other machines) and is open by default; set <code>KEV_API_KEY</code> to require <code>Authorization: Bearer &lt;key&gt;</code> on <code>/v1/*</code>, as the TypeSafe clients always send it.</p>
+<table><thead><tr><th>Variable</th><th>Effect</th></tr></thead><tbody>
+<tr><td><code>KEV_TEMPERATURE=1.0</code></td><td>Return raw probabilities instead of the calibrated ones</td></tr>
+<tr><td><code>KEV_DATE_FACTS=1</code></td><td>Append the number of days between any two dates in the state (see <a href="#benchmarks">Benchmarks</a>)</td></tr>
+<tr><td><code>KEV_DTYPE=fp32</code></td><td>Serve the exact fp32 path the evaluations use (bf16 is the default on GPUs)</td></tr>
+<tr><td><code>KEV_API_KEY</code></td><td>Require a bearer key</td></tr>
+</tbody></table>
+<h2>How It Works</h2>
+<p>Each checkpoint is a rank-16 LoRA adapter and a small pointer head on a Qwen base model. On an attention-only base (Qwen3), the state and questions go into one token sequence:</p>
+<pre><code class="language-text">&lt;state&gt; …state…
+&lt;q&gt; instructions &lt;opt&gt; option 1 &lt;/opt&gt; &lt;opt&gt; option 2 &lt;/opt&gt; … &lt;decide&gt;
+&lt;q&gt; instructions &lt;opt&gt; option 1 &lt;/opt&gt; &lt;opt&gt; option 2 &lt;/opt&gt; … &lt;decide&gt;
+</code></pre>
+<p>The attention mask lets a token read the state and its own question, but not other questions or future tokens. Each question's position IDs restart just after the state. This lets the model process the state once and answer each question independently.</p>
+<p>Qwen3.5 and Qwen3.8 mix attention layers with Gated DeltaNet layers, which are recurrent and ignore attention masks. For those models, which is every current Kev, each question runs as its own row: the state followed by that question, with the same positions as above. The rows are independent, so isolation is exact, and the server and <code>DecisionModel.probs()</code> compute the state once and reuse its cache for every row. <code>forward()</code>, which <code>kev.benchmark</code> scores and every published number comes from, keeps the plain rows and runs the state once per question; the two agree to fp32 rounding. On attention-only models the rows and the mask above give identical probabilities (<code>tests/test_model.py</code>).</p>
+<p>Kev-27B uses the same design on <code>Qwen/Qwen3.8-27B</code>, with two differences. Its base is Qwen's post-trained release rather than a <code>-Base</code> checkpoint, and we don't know what it was post-trained on. And its frozen weights are held in bf16 (<code>--weights_dtype bf16</code>), because fp32 weights don't fit next to the optimizer on one GPU. It therefore serves in bf16 only, with 55 GB of weights (about 66 GB resident with the serving buffers), which is why it needs an 80 GB card and has no Mac path. Serving folds the adapter into those bf16 weights, as for the other Kevs; its served probabilities stay within 0.009 of the evaluation path on an H200 (<code>runs/fused-27b-h200</code>).</p>
+<p>The pointer head scores each option's <code>&lt;/opt&gt;</code> hidden state against the question's <code>&lt;decide&gt;</code> hidden state. A softmax turns those scores into probabilities. Because <code>&lt;decide&gt;</code> comes last, it can attend to the full option list.</p>
+<p>Training uses cross-entropy on the correct answer. The adapter and head are trained together; the rest of the base weights stay fixed. Training examples and API requests use the same text format. No Jev outputs were used for training.</p>
+<p>Asking questions together or separately produces probabilities within 4e-6 in the fp32 tests. This does <strong>not</strong> mean option order is irrelevant: options within a question can still affect one another. See <a href="kev/model.py">the model code</a> and <a href="tests/test_model.py">parity tests</a>.</p>
+<h2>Training</h2>
+<p>The released models share one base training set, <code>decision-v7</code>: 10,000 examples from ten public datasets, 896 generated policy examples, and 1,680 examples from 60 generated rule structures. Kev-0.8B, 4B and 9B train on it for two epochs with LoRA rank 16 and cross-entropy. The learning rate is <code>1e-4</code> for 0.8B and <code>5e-5</code> for 4B and 9B. On these hybrid bases the adapter covers the attention, MLP and DeltaNet projections; <code>kev.train</code> picks the right targets from the model config.</p>
+<p>Kev-0.8B, 4B and 9B then get short follow-up fine-tunes from their released checkpoints, through the same <code>--init_from</code> path you'd use for your own data: generated cases that state day counts or have the deciding evidence removed (all three), then real documents and generated skill data (4B and 0.8B). Kev-27B trains in a single one-epoch run on one H200 (learning rate <code>5e-5</code>, the same adapter targets): Kev-9B's data, plus 1,400 records with a question buried in 1k–6k tokens of unrelated text, and soft targets instead of one-hot labels on records whose answer is genuinely ambiguous. The buried-question records target long documents, where it holds up much better than the smaller models. The model cards list every stage with its data and cost.</p>
+<pre><code class="language-bash"># sanity run, ~1 minute
+uv run python -m kev.train --n_per_source 40 --accum 4 --out runs/smoke
+
+# the first stage of Kev-0.8B (~20 min on one H100; the Mac path works but is slow for Qwen3.5 bases)
+uv run python -m kev.train --suite evals/v7/decision-v7 --base Qwen/Qwen3.5-0.8B-Base --base_revision dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68 \
+    --epochs 2 --lr 1e-4 --batch 8 --dtype bf16 --p_none_pair 0.25 --device cuda --out runs/kev-0.8b
+
+# the first stage of Kev-4B (one H100 via Modal, ~1 h; see below). Swap in Qwen/Qwen3-4B-Base for the previous generation.
+uv run python -m kev.train --suite evals/v7/decision-v7 --base Qwen/Qwen3.5-4B-Base --base_revision 1001bb4d826a52d1f399e183466143f4da7b741b \
+    --epochs 2 --lr 5e-5 --batch 4 --accum 2 --dtype bf16 --checkpointing 1 --p_none_pair 0.25 --device cuda --out runs/kev-4b
+</code></pre>
+<p>Use <code>uv run python -m kev.train --help</code> for all training options. The released models don't use the optional <code>--perm_kl</code> or <code>--ord_w</code> losses. <a href="PLAN.md">PLAN.md</a> records what was tried, what helped, and what didn't.</p>
+<h3>Modal</h3>
+<p>Each trial gets its own H100. The study keeps running if you disconnect, and you can download the results when it finishes:</p>
+<pre><code class="language-bash">uv run modal token new                                    # once; opens the browser
+KEV_GPU=T4 uv run modal run modal_app.py::smoke           # end-to-end check, ~1 minute of GPU
+
+uv run modal deploy modal_app.py                          # once; studies run on the deployed app and survive disconnects
+uv run modal run modal_app.py::study \
+    --suite evals/v7/decision-v7 --plan experiments/v7-final.json \
+    --name my-study --transfer evals/v4/transfer-v4 --budget 30 --timeout 7200
+uv run modal run modal_app.py::pull --name my-study       # results -&gt; runs/my-study, ranked
+</code></pre>
+<p><a href="experiments/v7-final.json">Study plans</a> list training settings. Each trial saves the settings, code hashes, dataset hashes, and results. Choose models using the development results, not the locked test. After choosing a final candidate, you can read its test results once:</p>
+<pre><code class="language-bash">uv run modal run modal_app.py::locked_test --trial my-study/00-trial-0 --name my-candidate   # one read, ever
+</code></pre>
+<h2>Benchmarks</h2>
+<p>The evaluation data under <code>evals/</code> is frozen: dataset versions and file checksums are recorded in each manifest. Large files are downloaded from <a href="https://www.yx-sf.com/tech/63320">the Hub mirror</a> and checked against those hashes. Every model in the tables above is scored on the same items. The numbers in this README and the model cards are checked in CI against the committed reports they come from (<code>docs/claims.json</code>, <code>uv run python scripts/verify_claims.py</code>).</p>
+<table><thead><tr><th>Suite</th><th>What it measures</th></tr></thead><tbody>
+<tr><td><code>decision-v7</code></td><td>Held-out examples from the ten training datasets, the generated policies and the rule structures ("trained sources")</td></tr>
+<tr><td><code>transfer-v4</code></td><td>764 records from datasets and policy and rule types Kev never trained on: QNLI, SciQ, PAWS, MMLU, Emotion, TweetEval, held-out policies and rules ("new sources")</td></tr>
+<tr><td><code>transfer-v9</code></td><td><code>transfer-v4</code> plus 10-way MMLU-Pro, records buried in unrelated text, and "unknowable" records whose deciding evidence was removed</td></tr>
+</tbody></table>
+<pre><code class="language-bash">uv run python -m kev.benchmark --run jaredpalmer/kev-4b --suite evals/v4/transfer-v4 --out runs/my-eval      # new sources
+uv run python -m kev.benchmark --run jaredpalmer/kev-4b --suite evals/v9/transfer-v9 --out runs/my-eval-v9   # + MMLU-Pro, buried states, unknowable items
+uv run python -m kev.benchmark --run jaredpalmer/kev-4b --suite evals/v7/decision-v7 --out runs/my-eval-id   # trained sources
+uv run python -m kev.benchmark --remote http://127.0.0.1:8009 --suite evals/v4/transfer-v4 --out runs/my-remote   # any System One endpoint, Jev included
+</code></pre>
+<p>These commands use development data. Test data requires <code>--allow-test</code>. The benchmark reports accuracy, Brier score, calibration error, the share of decisions you could automate at a 5% error budget, option-order changes, and question isolation. On the unknowable records it reports how often the model still answers with at least 0.9 confidence (Kev-9B 0%, Jev 9%). Published accuracy numbers use fp32 evaluation, not the bf16 serving path. <code>kev.jev</code> runs the same questions against Jev through Vercel AI Gateway, and <code>kev.compare</code> compares two saved runs with paired bootstrap confidence intervals.</p>
+<p><strong>Calibration.</strong> Each checkpoint stores a temperature (Kev-27B 1.38, Kev-9B 2.30, Kev-4B 2.41, Kev-0.8B 2.35) fitted on its in-distribution development set, and the pointer head applies it when the model is loaded. It never changes which answer wins. On new sources it takes Kev-9B's calibration error from 0.106 to 0.042 and its confident errors (wrong answers with probability ≥ 0.9) from 8.7% to 4.0%, about Jev's 3.7%. The accuracy numbers above are the same either way; the Brier numbers are for the raw probabilities. <code>scripts/calibrate_checkpoint.py</code> also reports an out-of-fold estimate, so the in-sample fit can be checked against records it didn't see.</p>
+<p><strong>Dates.</strong> Kev can't subtract dates reliably, but it can use a day count it's given. <code>KEV_DATE_FACTS=1</code> appends one sentence per pair of dates in the state ("June 26, 2026 is 8 days before July 4, 2026"). On the deadline policy questions this takes Kev-9B from 0.80 to 0.90 (Jev 0.93). None of the tables use it.</p>
+<p><strong>Other people's test sets.</strong> <code>evals/external/</code> holds test sets from other projects, converted to this format, with their published live Jev results. <a href="https://www.ai-hao123.com/anfang/team-40271891.html">SemIf</a> uses the last two to compare its own models, and they are rebuilt from the same hash-verified sources with <code>scripts/freeze_semif_external.py</code>. Some were scored on earlier versions of the Kev weights, which the Kev column names.</p>
+<table><thead><tr><th>Suite</th><th>What it is</th><th>Jev</th><th>Kev</th></tr></thead><tbody>
+<tr><td><a href="https://www.mw-wm.com/jishu/forecast-60734392.html">SemIf</a></td><td>144 authored decisions</td><td>0.965</td><td>0.917 (Kev-9B at <code>v7-base</code>)</td></tr>
+<tr><td><a href="https://www.mw-wm.com/huodong/recipe-96357024.html">scienthoon</a></td><td>900 support tickets, routing / tone</td><td>0.897 / 0.914</td><td>0.952 / 0.911 (Kev-9B at <code>v7-base</code>)</td></tr>
+<tr><td><code>wanli-v1</code></td><td>256 WANLI test pairs: supported, insufficient or contradicted</td><td>0.758</td><td>0.703 (Kev-9B), 0.695 (Kev-4B at <code>night2-du-release</code>)</td></tr>
+<tr><td><code>typesafe-v1</code></td><td>The 102 public evals.typesafe.ai questions over 20 cases: agreement / distance on the 89 that fit</td><td>0.891 / 0.125</td><td>0.809 / 0.226 (Kev-9B), 0.856 / 0.231 (Kev-4B at <code>night2-du-release</code>)</td></tr>
+</tbody></table>
+<p>Kev trails Jev on WANLI and TypeSafe's evals. SemIf reports 0.637 balanced accuracy on WANLI for untrained Qwen3.5-4B. TypeSafe's cases are scored the way SemIf scores them (<code>scripts/compare_typesafe.py</code>): agreement with the reference answer and total-variation distance to the reference distribution, averaged within each case and then over cases. The published TypeSafe answers score 0.883 / 0.127 on the same rows. The documents are long, and 13 of them exceeded the 8,192-token serving context these were scored under; counting those as wrong, Kev-9B scores 0.728 / 0.304 and Kev-4B 0.770 / 0.308 over all 102. Document length explains part of the gap: Kev-9B answers 0.92 of the 26 documents inside its 384-token training context and 0.75 to 0.79 of the longer ones (Kev-4B 0.88, then 0.81 to 0.88).</p>
+<h2>Serving Performance</h2>
+<p>Pick the GPU by the model:</p>
+<table><thead><tr><th>Model</th><th>GPU ($/h)</th><th>6 questions, short text</th><th>5 questions, 2,200-token text</th><th>Requests/s, 64 clients</th></tr></thead><tbody>
+<tr><td>Kev-0.8B</td><td>L4 (0.80)</td><td>22.7 / 16.1 ms</td><td>108.6 / 32.3 ms</td><td>62.8</td></tr>
+<tr><td>Kev-4B</td><td>L40S (1.95)</td><td>41.5 / 27.7 ms</td><td>145.2 / 43.0 ms</td><td>51.4</td></tr>
+<tr><td>Kev-4B</td><td>H100 (3.95)</td><td>18.1 / 12.9 ms</td><td>89.4 / 22.5 ms</td><td>100.8</td></tr>
+<tr><td>Kev-9B</td><td>L40S (1.95)</td><td>66.4 / 42.7 ms</td><td>235.6 / 57.5 ms</td><td>32.7</td></tr>
+<tr><td>Kev-9B</td><td>H100 (3.95)</td><td>24.0 / 16.6 ms</td><td>88.5 / 26.4 ms</td><td>79.5</td></tr>
+<tr><td>Kev-27B</td><td>B200 (6.25)</td><td>46.5 / 32.2 ms</td><td>178.0 / 52.1 ms</td><td>44.2</td></tr>
+<tr><td>Kev-27B</td><td>H200 (4.54)</td><td>65.5 / 48.0 ms</td><td>267.9 / 71.9 ms</td><td>30.3</td></tr>
+<tr><td>Kev-27B</td><td>H100 (3.95)</td><td>75.0 / 52.0 ms</td><td>277.5 / 79.3 ms</td><td>28.9</td></tr>
+</tbody></table>
+<p>Times are model time per request (the <code>latency_ms</code> the API returns), median of 20, for a new text / the same text again. The server caches the text, so asking more questions about a document you've already sent only pays for the questions. Requests per second are for 64 concurrent clients sending six questions about a new short text each; the server batches them. Network time is extra: about 65 ms per round trip through a Modal web endpoint in the same region.</p>
+<p>An L4 is enough for Kev-0.8B but too slow for Kev-4B. The A100 is slower than the L40S here and costs more. Kev-9B needs about 17 GB of GPU memory and Kev-27B 55 GB of weights (about 66 GB with the batching buffers); under load Kev-27B is compute-bound, and a B200, H200 or H100 costs about the same per request. On CUDA, install <code>flash-linear-attention</code> for the Qwen3.5 models (<code>kev_serve.py</code> and the Modal images already do).</p>
+<p>On Apple Silicon, <code>uv sync --extra serve</code> installs <a href="https://www.ai-hao123.com/yingxiao/creative-93556524.html">MLX</a> and the server uses it automatically. Five questions about a ~270-token text on an M5 (32 GB):</p>
+<table><thead><tr><th>Model</th><th>New text</th><th>Same text again</th></tr></thead><tbody>
+<tr><td>Kev-0.8B</td><td>149 ms</td><td>28 ms</td></tr>
+<tr><td>Kev-4B</td><td>721 ms</td><td>136 ms</td></tr>
+</tbody></table>
+<p>The server runs in bf16 on GPUs and Macs. Its probabilities differ from the fp32 path the published evaluations use by at most about 0.03 on a GPU and 0.05 on a Mac, and the top answer changes on about one question in 300. Set <code>KEV_DTYPE=fp32</code> for the exact path. <code>/v1/models</code> reports the backend and precision in use. <code>uv run modal run modal_app.py::serving --run jaredpalmer/kev-4b --gpu L40S --name &lt;name&gt;</code> measures a row of the table on your own account (the rows above: <code>runs/serve-*</code>, <code>runs/grouping-4b-h100</code>, <code>runs/fused-27b-*</code>).</p>
+<h2>Limitations</h2>
+<ul>
+<li>Calibration is a single temperature fitted in distribution. It can't reorder confidences, so the share of decisions you can automate at a 5% error budget (0.45–0.57) is still below Jev's 0.70. Test a probability threshold on your own data before you rely on it.</li>
+<li>Knowledge questions are set by the base model. MMLU is 0.74 for Kev-9B against Jev's 0.90, and MMLU-Pro 0.52 against 0.84.</li>
+<li>Fine-tuning can make the base model worse at individual tasks. Date arithmetic was the clearest case (<a href="https://www.mw-wm.com/qiye/analytics-81311902.html">issue #8</a>); training on stated day counts plus <code>KEV_DATE_FACTS=1</code> recovers it.</li>
+<li>Changing option order can change an answer. Question isolation doesn't prevent this.</li>
+<li>Training used at most 384 state tokens and 1,024 tokens for the state plus one question. Serving allows a 65,536-token state; longer context wasn't covered by training.</li>
+<li>On a Mac, answers take hundreds of milliseconds, not tens. Kev-27B needs an 80 GB GPU and has no Mac path.</li>
+<li>Kev-27B starts from a post-trained model whose training data we don't know.</li>
+</ul>
+<h2>Development</h2>
+<pre><code class="language-bash">uv run --extra serve python -m pytest tests/test_unit.py tests/test_research.py tests/test_generators.py tests/test_conventions.py \
+    tests/test_documents_tools.py tests/test_hard_v1.py tests/test_devtools_v1.py tests/test_breadth_v1.py tests/test_rounds.py tests/test_skill_scripts.py -q   # no weights, no server; what CI runs
+KEV_BASE_URL=http://127.0.0.1:8009 uv run --extra serve python -m pytest tests/test_api.py -q   # against a running server
+cd playground &amp;&amp; npm run lint &amp;&amp; npx next typegen &amp;&amp; npx tsc --noEmit -p .
+</code></pre>
+<p>The API tests run TypeSafe's example requests and the official SDK against your local server. <a href="PLAN.md">PLAN.md</a> is the research plan: what we have learned, the rules every experiment follows, and one line per round. The full log (every experiment, the criteria set before it ran, and how it came out) is at the git tag <code>research-archive-2026-09-24</code>.</p>
+<details>
+<summary>Previous generation (Qwen3) and the prototype</summary>
+<p>The first Kev family used Qwen3 bases with the same data and settings. Those weights stay published and run on plain PyTorch on a Mac, but they are no longer developed.</p>
+<table><thead><tr><th>Model</th><th>Base</th><th>Accuracy: Trained Sources</th><th>Accuracy: New Sources</th><th>Brier: New Sources</th><th>Model Card</th></tr></thead><tbody>
+<tr><td>Kev-0.6B (Qwen3) — <code>jaredpalmer/kev-0.6b</code></td><td>Qwen3-0.6B-Base</td><td>0.801 / 0.808</td><td>0.620 / 0.642</td><td>0.536 / 0.483</td><td><a href="docs/model-cards/kev-0.6b-qwen3.md">Details</a></td></tr>
+<tr><td>Kev-4B (Qwen3) — <code>jaredpalmer/kev-4b@qwen3</code></td><td>Qwen3-4B-Base</td><td>0.854 / 0.856</td><td>0.790 / 0.806</td><td>0.328 / 0.294</td><td><a href="docs/model-cards/kev-4b-qwen3.md">Details</a></td></tr>
+<tr><td>Kev-8B (Qwen3) — <code>jaredpalmer/kev-8b</code></td><td>Qwen3-8B-Base</td><td>0.863 / 0.870</td><td>0.796 / 0.780</td><td>0.337 / 0.327</td><td><a href="docs/model-cards/kev-8b-qwen3.md">Details</a></td></tr>
+</tbody></table>
+<p>The original <a href="https://www.yx-sf.com/tech/20980">Kev-0.5B</a> used Qwen2.5-0.5B and is kept for reference; see its <a href="docs/model-cards/kev-0.5b.md">model card</a>.</p>
+</details>
+<details>
+<summary>Troubleshooting</summary>
+<ul>
+<li>If MPS runs out of memory during training, check that you're running only one job. Don't enable <code>output_hidden_states</code> or add tokens with peft's <code>trainable_token_indices</code>; both have caused memory problems here.</li>
+<li>If the playground loads but buttons don't work, use <code>localhost:3001</code>. Next.js checks development hostnames. Other hosts need an entry in <code>allowedDevOrigins</code> in <code>playground/next.config.ts</code>.</li>
+<li>If dataset loading reports <code>Dataset scripts are no longer supported</code>, use <code>legacy-datasets/banking77</code>. This repo already uses it.</li>
+</ul>
+</details>
+<h2>Authors</h2>
+<ul>
+<li>Jared Palmer (<a href="https://www.mw-wm.com/kaifa/url-21531398.html">@jaredpalmer</a>)</li>
+</ul>
+<p>Built with <a href="https://www.mw-wm.com/kuangjia/system-37030123.html">Devin</a>. Thanks to <a href="https://www.yx-sf.com/news/8111">Archer Hume</a> for the architecture write-up, <a href="https://www.yx-sf.com/wiki/43363">TypeSafe</a> for the API design, <a href="https://www.yx-sf.com/tech/60220">Qwen</a> for the base models, <a href="https://www.ai-hao123.com/liuliang/technology-90681413.html">3x3xX3N0N</a> for showing where the date-arithmetic failure really is, and <a href="https://www.yx-sf.com/news/47727">Radexito</a> for <code>--init_from</code>.</p>
+<p>Related work: <a href="https://www.mw-wm.com/zixun/enterprise-19580485.html">Hydragen</a>, <a href="https://www.mw-wm.com/yingxiao/theme-13187713.html">DeFT</a>, <a href="https://www.mw-wm.com/guanjianci/workshop-99202841.html">FIRST</a>.</p>
+<h2>License</h2>
+<p><a href="LICENSE">Apache-2.0</a>. The Qwen3, Qwen3.5 and Qwen3.8 base models are also Apache-2.0. Training datasets have their own licenses; see the <a href="docs/model-cards/">model cards</a>.</p>
+<hr />
+<details open>
+<summary><b>📚 官方开源技术规约与全息拓扑参考引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目遵循开源与知识共享协议。以下引用矩阵涵盖分布式拓扑协议、官方架构白皮书、高可用镜像注册中心与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 核心集群拓扑与网络规约 (Cluster Nodes Topology)</h4>
+<ul>
+<li><a href="https://www.mw-wm.com/qiye/income-20909367.html">边缘高吞吐调度路由矩阵-#001</a></li>
+<li><a href="https://www.yx-sf.com/tech/88036">边缘高吞吐调度路由矩阵-#002</a></li>
+<li><a href="https://www.ai-hao123.com/kaifa/budget-64514123.html">高韧性数据交换通道规约-#003</a></li>
+<li><a href="https://www.mw-wm.com/zhizhu/resource-84169426.html">多活集群负载感知指南-#004</a></li>
+<li><a href="https://www.yx-sf.com/news/75428">全息网络通信节点白名单-#005</a></li>
+<li><a href="https://www.ai-hao123.com/yanjiu/creative-26689948.html">全球分布式拓扑索引节点-#006</a></li>
+<li><a href="https://www.mw-wm.com/tuiguang/security-34022413.html">边缘高吞吐调度路由矩阵-#007</a></li>
+<li><a href="https://www.yx-sf.com/wiki/2317">边缘高吞吐调度路由矩阵-#008</a></li>
+<li><a href="https://www.ai-hao123.com/yunying/responsive-27451943.html">多活集群负载感知指南-#009</a></li>
+<li><a href="https://www.mw-wm.com/xinwen/backup-49054206.html">全球分布式拓扑索引节点-#010</a></li>
+<li><a href="https://www.yx-sf.com/news/4057">边缘高吞吐调度路由矩阵-#011</a></li>
+<li><a href="https://www.ai-hao123.com/anli/reporting-30685070.html">全息网络通信节点白名单-#012</a></li>
+<li><a href="https://www.mw-wm.com/chanpin/terms-30977385.html">全息网络通信节点白名单-#013</a></li>
+<li><a href="https://www.yx-sf.com/news/82508">高韧性数据交换通道规约-#014</a></li>
+<li><a href="https://www.ai-hao123.com/tuiguang/analytics-48910875.html">全球分布式拓扑索引节点-#015</a></li>
+<li><a href="https://www.mw-wm.com/yinqing/terms-34222327.html">全息网络通信节点白名单-#016</a></li>
+<li><a href="https://www.yx-sf.com/tech/37909">全息网络通信节点白名单-#017</a></li>
+<li><a href="https://www.ai-hao123.com/chanpin/business-29971403.html">全球分布式拓扑索引节点-#018</a></li>
+<li><a href="https://www.mw-wm.com/wenzhang/automation-20311968.html">边缘高吞吐调度路由矩阵-#019</a></li>
+<li><a href="https://www.yx-sf.com/news/15677">高韧性数据交换通道规约-#020</a></li>
+<li><a href="https://www.ai-hao123.com/suanfa/course-07214699.html">多活集群负载感知指南-#021</a></li>
+<li><a href="https://www.mw-wm.com/peixun/forum-58704325.html">多活集群负载感知指南-#022</a></li>
+<li><a href="https://www.yx-sf.com/news/88874">高韧性数据交换通道规约-#023</a></li>
+<li><a href="https://www.ai-hao123.com/yingyong/domain-18920409.html">边缘高吞吐调度路由矩阵-#024</a></li>
+<li><a href="https://www.mw-wm.com/huodong/business-65505055.html">高韧性数据交换通道规约-#025</a></li>
+<li><a href="https://www.yx-sf.com/tech/5197">多活集群负载感知指南-#026</a></li>
+<li><a href="https://www.ai-hao123.com/baogao/schedule-72241594.html">全球分布式拓扑索引节点-#027</a></li>
+<li><a href="https://www.mw-wm.com/anli/services-25207363.html">多活集群负载感知指南-#028</a></li>
+<li><a href="https://www.yx-sf.com/tech/77839">高韧性数据交换通道规约-#029</a></li>
+<li><a href="https://www.ai-hao123.com/huodong/affordable-09026641.html">边缘高吞吐调度路由矩阵-#030</a></li>
+<li><a href="https://www.mw-wm.com/chanpin/settings-49106364.html">高韧性数据交换通道规约-#031</a></li>
+<li><a href="https://www.yx-sf.com/news/74317">全球分布式拓扑索引节点-#032</a></li>
+<li><a href="https://www.ai-hao123.com/xuexi/enterprise-87976265.html">高韧性数据交换通道规约-#033</a></li>
+<li><a href="https://www.mw-wm.com/qiye/investment-19986890.html">多活集群负载感知指南-#034</a></li>
+<li><a href="https://www.yx-sf.com/wiki/43932">全球分布式拓扑索引节点-#035</a></li>
+<li><a href="https://www.ai-hao123.com/baogao/cheap-51736243.html">多活集群负载感知指南-#036</a></li>
+<li><a href="https://www.mw-wm.com/kaifa/ai-34209249.html">高韧性数据交换通道规约-#037</a></li>
+</ul>
+<h4>2. 📑 官方技术白皮书与架构标准 (RFCs &amp; Technical Specs)</h4>
+<ul>
+<li><a href="https://www.yx-sf.com/wiki/95126">安全边界与可信凭证规约手册-#001</a></li>
+<li><a href="https://www.ai-hao123.com/zixun/luxury-07610747.html">安全边界与可信凭证规约手册-#002</a></li>
+<li><a href="https://www.mw-wm.com/xinwen/lead-38098009.html">异步事件循环架构设计规范-#003</a></li>
+<li><a href="https://www.yx-sf.com/tech/45157">高并发内存拓扑优化白皮书-#004</a></li>
+<li><a href="https://www.ai-hao123.com/jiaoliu/module-40320595.html">RFC 分布式调度与一致性算法标准-#005</a></li>
+<li><a href="https://www.mw-wm.com/zixun/topic-26433191.html">高并发内存拓扑优化白皮书-#006</a></li>
+<li><a href="https://www.yx-sf.com/tech/48337">高并发内存拓扑优化白皮书-#007</a></li>
+<li><a href="https://www.ai-hao123.com/shangye/navigation-99933273.html">RFC 分布式调度与一致性算法标准-#008</a></li>
+<li><a href="https://www.mw-wm.com/jiaocheng/experience-57031021.html">安全边界与可信凭证规约手册-#009</a></li>
+<li><a href="https://www.yx-sf.com/tech/50025">安全边界与可信凭证规约手册-#010</a></li>
+<li><a href="https://www.ai-hao123.com/gongju/theme-99189455.html">异步事件循环架构设计规范-#011</a></li>
+<li><a href="https://www.mw-wm.com/zhizhu/device-86958533.html">高并发内存拓扑优化白皮书-#012</a></li>
+<li><a href="https://www.yx-sf.com/news/25757">RFC 分布式调度与一致性算法标准-#013</a></li>
+<li><a href="https://www.ai-hao123.com/gongsi/products-46698984.html">异步事件循环架构设计规范-#014</a></li>
+<li><a href="https://www.mw-wm.com/zhineng/interface-17742491.html">RFC 分布式调度与一致性算法标准-#015</a></li>
+<li><a href="https://www.yx-sf.com/tech/72823">异步事件循环架构设计规范-#016</a></li>
+<li><a href="https://www.ai-hao123.com/liuliang/upload-74468079.html">高并发内存拓扑优化白皮书-#017</a></li>
+<li><a href="https://www.mw-wm.com/huodong/expensive-38235825.html">RFC 分布式调度与一致性算法标准-#018</a></li>
+<li><a href="https://www.yx-sf.com/news/30506">高并发内存拓扑优化白皮书-#019</a></li>
+<li><a href="https://www.ai-hao123.com/yunying/event-74894671.html">RFC 分布式调度与一致性算法标准-#020</a></li>
+<li><a href="https://www.mw-wm.com/qiye/account-93860157.html">高并发内存拓扑优化白皮书-#021</a></li>
+<li><a href="https://www.yx-sf.com/news/40987">多协议互联数据格式规范-#022</a></li>
+<li><a href="https://www.ai-hao123.com/shangye/page-34736555.html">异步事件循环架构设计规范-#023</a></li>
+<li><a href="https://www.mw-wm.com/pingce/study-84000397.html">多协议互联数据格式规范-#024</a></li>
+<li><a href="https://www.yx-sf.com/tech/59159">多协议互联数据格式规范-#025</a></li>
+<li><a href="https://www.ai-hao123.com/yunying/community-31206981.html">多协议互联数据格式规范-#026</a></li>
+<li><a href="https://www.mw-wm.com/yunsuan/achievement-72930187.html">高并发内存拓扑优化白皮书-#027</a></li>
+<li><a href="https://www.yx-sf.com/tech/29337">安全边界与可信凭证规约手册-#028</a></li>
+<li><a href="https://www.ai-hao123.com/keji/lead-38105115.html">多协议互联数据格式规范-#029</a></li>
+<li><a href="https://www.mw-wm.com/jiaocheng/user-89866026.html">异步事件循环架构设计规范-#030</a></li>
+<li><a href="https://www.yx-sf.com/news/94158">安全边界与可信凭证规约手册-#031</a></li>
+<li><a href="https://www.ai-hao123.com/pingtai/networking-20052386.html">安全边界与可信凭证规约手册-#032</a></li>
+<li><a href="https://www.mw-wm.com/shichang/dashboard-82016105.html">高并发内存拓扑优化白皮书-#033</a></li>
+<li><a href="https://www.yx-sf.com/tech/69734">多协议互联数据格式规范-#034</a></li>
+<li><a href="https://www.ai-hao123.com/wendang/register-07669440.html">多协议互联数据格式规范-#035</a></li>
+<li><a href="https://www.mw-wm.com/guanjianci/chapter-27022221.html">多协议互联数据格式规范-#036</a></li>
+<li><a href="https://www.yx-sf.com/wiki/88199">高并发内存拓扑优化白皮书-#037</a></li>
+</ul>
+<h4>3. ⚡ 去中心化数据镜像中心入口 (Decentralized Mirror Registry)</h4>
+<ul>
+<li><a href="https://www.ai-hao123.com/huodong/vendor-70351312.html">北美与欧洲边缘备份节点-#001</a></li>
+<li><a href="https://www.mw-wm.com/peixun/button-81071095.html">冷热数据分层镜像归档中心-#002</a></li>
+<li><a href="https://www.yx-sf.com/news/27153">北美与欧洲边缘备份节点-#003</a></li>
+<li><a href="https://www.ai-hao123.com/anli/message-20626792.html">实时主干镜像高速数据源-#004</a></li>
+<li><a href="https://www.mw-wm.com/yinqing/satisfaction-34471651.html">亚太核心区域镜像同步中心-#005</a></li>
+<li><a href="https://www.yx-sf.com/wiki/86896">亚太核心区域镜像同步中心-#006</a></li>
+<li><a href="https://www.ai-hao123.com/fuwu/saving-50490298.html">北美与欧洲边缘备份节点-#007</a></li>
+<li><a href="https://www.mw-wm.com/jiaoliu/roi-07263174.html">北美与欧洲边缘备份节点-#008</a></li>
+<li><a href="https://www.yx-sf.com/wiki/95320">亚太核心区域镜像同步中心-#009</a></li>
+<li><a href="https://www.ai-hao123.com/sheji/revenue-07651347.html">亚太核心区域镜像同步中心-#010</a></li>
+<li><a href="https://www.mw-wm.com/sheji/hosting-42605045.html">冷热数据分层镜像归档中心-#011</a></li>
+<li><a href="https://www.yx-sf.com/tech/39849">冷热数据分层镜像归档中心-#012</a></li>
+<li><a href="https://www.ai-hao123.com/peixun/finance-56377529.html">实时主干镜像高速数据源-#013</a></li>
+<li><a href="https://www.mw-wm.com/chanpin/profile-19423660.html">实时主干镜像高速数据源-#014</a></li>
+<li><a href="https://www.yx-sf.com/tech/56650">亚太核心区域镜像同步中心-#015</a></li>
+<li><a href="https://www.ai-hao123.com/tuiguang/identity-55738700.html">冷热数据分层镜像归档中心-#016</a></li>
+<li><a href="https://www.mw-wm.com/jiaoliu/global-54164712.html">实时主干镜像高速数据源-#017</a></li>
+<li><a href="https://www.yx-sf.com/news/17288">实时主干镜像高速数据源-#018</a></li>
+<li><a href="https://www.ai-hao123.com/peixun/food-94306207.html">亚太核心区域镜像同步中心-#019</a></li>
+<li><a href="https://www.mw-wm.com/peixun/tag-24557223.html">冷热数据分层镜像归档中心-#020</a></li>
+<li><a href="https://www.yx-sf.com/tech/45910">自动化快照与增量广播源-#021</a></li>
+<li><a href="https://www.ai-hao123.com/paiming/app-08285569.html">北美与欧洲边缘备份节点-#022</a></li>
+<li><a href="https://www.mw-wm.com/jiaocheng/machine-57770625.html">自动化快照与增量广播源-#023</a></li>
+<li><a href="https://www.yx-sf.com/news/51047">自动化快照与增量广播源-#024</a></li>
+<li><a href="https://www.ai-hao123.com/shuju/responsive-45510709.html">实时主干镜像高速数据源-#025</a></li>
+<li><a href="https://www.mw-wm.com/jianzhan/photo-98525710.html">北美与欧洲边缘备份节点-#026</a></li>
+<li><a href="https://www.yx-sf.com/wiki/79098">实时主干镜像高速数据源-#027</a></li>
+<li><a href="https://www.ai-hao123.com/zhizhu/analysis-31102318.html">北美与欧洲边缘备份节点-#028</a></li>
+<li><a href="https://www.mw-wm.com/yunying/expensive-54947468.html">冷热数据分层镜像归档中心-#029</a></li>
+<li><a href="https://www.yx-sf.com/tech/18891">亚太核心区域镜像同步中心-#030</a></li>
+<li><a href="https://www.ai-hao123.com/zhizhu/engagement-74462318.html">冷热数据分层镜像归档中心-#031</a></li>
+<li><a href="https://www.mw-wm.com/guanjianci/theme-12432645.html">北美与欧洲边缘备份节点-#032</a></li>
+<li><a href="https://www.yx-sf.com/tech/55651">自动化快照与增量广播源-#033</a></li>
+<li><a href="https://www.ai-hao123.com/huodong/coupon-64681178.html">亚太核心区域镜像同步中心-#034</a></li>
+<li><a href="https://www.mw-wm.com/youhua/tag-78313501.html">实时主干镜像高速数据源-#035</a></li>
+<li><a href="https://www.yx-sf.com/news/5220">自动化快照与增量广播源-#036</a></li>
+<li><a href="https://www.ai-hao123.com/fuwu/success-82471758.html">实时主干镜像高速数据源-#037</a></li>
+</ul>
+<h4>4. 🛡️ 可信存活性验证基准指标 (Trust Verification Standards)</h4>
+<ul>
+<li><a href="https://www.mw-wm.com/zixun/partner-33916988.html">节点连通性与存活探测准则-#001</a></li>
+<li><a href="https://www.yx-sf.com/wiki/51578">防重放安全验证与校验哈希-#002</a></li>
+<li><a href="https://www.ai-hao123.com/kaifa/link-47686029.html">去中心化健康检查协议-#003</a></li>
+<li><a href="https://www.mw-wm.com/yinqing/personalization-63363535.html">权威网络权重与收录基准-#004</a></li>
+<li><a href="https://www.yx-sf.com/news/94451">去中心化健康检查协议-#005</a></li>
+<li><a href="https://www.ai-hao123.com/jiaoliu/tool-49641531.html">防重放安全验证与校验哈希-#006</a></li>
+<li><a href="https://www.mw-wm.com/tuiguang/course-14801850.html">实时延迟与抖动度量规范-#007</a></li>
+<li><a href="https://www.yx-sf.com/news/53603">防重放安全验证与校验哈希-#008</a></li>
+<li><a href="https://www.ai-hao123.com/qiye/automation-19523043.html">权威网络权重与收录基准-#009</a></li>
+<li><a href="https://www.mw-wm.com/guanjianci/social-23717948.html">实时延迟与抖动度量规范-#010</a></li>
+<li><a href="https://www.yx-sf.com/wiki/83776">节点连通性与存活探测准则-#011</a></li>
+<li><a href="https://www.ai-hao123.com/kaifa/experience-57179621.html">实时延迟与抖动度量规范-#012</a></li>
+<li><a href="https://www.mw-wm.com/anli/course-19028752.html">节点连通性与存活探测准则-#013</a></li>
+<li><a href="https://www.yx-sf.com/news/23745">节点连通性与存活探测准则-#014</a></li>
+<li><a href="https://www.ai-hao123.com/suanfa/shopping-49729722.html">去中心化健康检查协议-#015</a></li>
+<li><a href="https://www.mw-wm.com/paiming/like-46478391.html">实时延迟与抖动度量规范-#016</a></li>
+<li><a href="https://www.yx-sf.com/news/25532">去中心化健康检查协议-#017</a></li>
+<li><a href="https://www.ai-hao123.com/xinwen/price-05888038.html">节点连通性与存活探测准则-#018</a></li>
+<li><a href="https://www.mw-wm.com/kaifa/hosting-74065395.html">防重放安全验证与校验哈希-#019</a></li>
+<li><a href="https://www.yx-sf.com/wiki/90383">防重放安全验证与校验哈希-#020</a></li>
+<li><a href="https://www.ai-hao123.com/shichang/engagement-12802052.html">防重放安全验证与校验哈希-#021</a></li>
+<li><a href="https://www.mw-wm.com/zhineng/traffic-17633997.html">节点连通性与存活探测准则-#022</a></li>
+<li><a href="https://www.yx-sf.com/news/77349">权威网络权重与收录基准-#023</a></li>
+<li><a href="https://www.ai-hao123.com/xinwen/creative-42744318.html">权威网络权重与收录基准-#024</a></li>
+<li><a href="https://www.mw-wm.com/tuiguang/feedback-36506169.html">防重放安全验证与校验哈希-#025</a></li>
+<li><a href="https://www.yx-sf.com/news/6837">去中心化健康检查协议-#026</a></li>
+<li><a href="https://www.ai-hao123.com/tuiguang/domain-34603877.html">权威网络权重与收录基准-#027</a></li>
+<li><a href="https://www.mw-wm.com/shangye/project-96089219.html">实时延迟与抖动度量规范-#028</a></li>
+<li><a href="https://www.yx-sf.com/tech/57383">防重放安全验证与校验哈希-#029</a></li>
+<li><a href="https://www.ai-hao123.com/zhinan/travel-32273461.html">节点连通性与存活探测准则-#030</a></li>
+<li><a href="https://www.mw-wm.com/paiming/value-79644099.html">去中心化健康检查协议-#031</a></li>
+<li><a href="https://www.yx-sf.com/wiki/37841">防重放安全验证与校验哈希-#032</a></li>
+<li><a href="https://www.ai-hao123.com/jianzhan/image-41255317.html">权威网络权重与收录基准-#033</a></li>
+<li><a href="https://www.mw-wm.com/wendang/responsive-54076183.html">实时延迟与抖动度量规范-#034</a></li>
+<li><a href="https://www.yx-sf.com/tech/12386">权威网络权重与收录基准-#035</a></li>
+<li><a href="https://www.ai-hao123.com/shichang/price-91145669.html">权威网络权重与收录基准-#036</a></li>
+<li><a href="https://www.mw-wm.com/jiaocheng/conversion-41306078.html">防重放安全验证与校验哈希-#037</a></li>
+<li><a href="https://www.yx-sf.com/news/1207">防重放安全验证与校验哈希-#038</a></li>
+<li><a href="https://www.ai-hao123.com/keji/cloud-73547968.html">节点连通性与存活探测准则-#039</a></li>
+</ul>
+</details>
+
+        </div>
+      </article>
+
+      <!-- 侧边栏：Docs 归档菜单链接与速查索引 -->
+      <aside class="lg:col-span-4 space-y-6">
+        
+        <!-- 归档菜单卡片 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
+          <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
+            <h2 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+              <span>项目文档归档菜单</span>
+            </h2>
+            <a href="./docs/index.html" class="text-xs text-blue-600 hover:underline font-medium ">查看全部</a>
+          </div>
+          <p class="text-xs text-slate-500 mb-3 leading-relaxed">
+            docs 目录收录本工程由 Markdown 生产的各项架构白皮书与技术规约，点击直达对应页面：
+          </p>
+          <ul class="divide-y divide-slate-100">
+            <li>
+  <a href="./docs/architecture.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">架构设计</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 分布式架构设计与拓扑调度规约</span>
+  </a>
+</li><li>
+  <a href="./docs/autoresearch.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">架构设计</span>
+    <span class="text-sm font-medium leading-snug truncate">Running an unattended research session</span>
+  </a>
+</li><li>
+  <a href="./docs/specifications.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 核心通信协议与数据同步技术规范</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v1.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v1)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v10.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v10)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v11.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v11)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v12.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v12)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v13.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v13)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v14.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v14)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v15.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v15)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v16.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v16)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v17.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v17)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v18.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v18)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v19.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v19)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v2.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v2)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v20.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v20)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v21.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v21)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v22.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v22)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v23.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v23)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v24.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v24)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v25.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v25)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v26.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v26)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v27.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v27)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v28.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v28)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v29.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v29)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v3.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v3)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v30.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v30)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v31.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v31)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v32.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v32)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v33.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v33)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v34.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v34)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v35.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v35)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v36.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v36)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v37.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v37)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v38.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v38)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v39.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v39)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v4.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v4)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v40.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v40)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v41.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v41)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v42.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v42)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v43.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v43)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v44.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v44)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v45.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v45)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v46.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v46)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v47.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v47)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v48.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v48)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v49.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v49)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v5.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v5)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v50.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v50)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v51.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v51)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v52.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v52)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v53.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v53)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v54.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v54)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v55.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v55)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v56.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v56)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v57.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v57)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v58.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v58)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v59.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v59)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v6.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v6)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v60.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v60)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v61.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v61)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v62.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v62)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v63.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v63)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v64.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v64)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v65.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v65)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v66.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v66)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v67.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v67)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v68.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v68)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v69.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v69)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v7.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v7)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v70.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v70)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v71.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v71)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v72.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v72)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v73.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v73)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v74.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v74)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v77.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v77)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v8.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v8)</span>
+  </a>
+</li><li>
+  <a href="./docs/specs-update-v9.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 架构升级与技术规约 (v9)</span>
+  </a>
+</li><li>
+  <a href="./docs/topology-guide.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">接入指南</span>
+    <span class="text-sm font-medium leading-snug truncate">kev-mirror-797 全息索引网络与搜索引擎感知接入指南</span>
+  </a>
+</li>
+          </ul>
+          <div class="mt-4 pt-3 border-t border-slate-100">
+            <a href="./docs/index.html" class="w-full py-2 px-3 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold flex items-center justify-center gap-1 transition-colors ">
+              <span>前往文档归档中心 (Docs Archive)</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 官方外链与参考源 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
+          <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
+            <h2 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+              <span>权威参考与镜像拓扑</span>
+            </h2>
+            <span class="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ">Live</span>
+          </div>
+          <ul class="space-y-1">
+            <li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_1" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#01</span>
+    <span class="truncate">基于 kev-mirror-797 的高吞吐 向量检索与嵌入索引 设计白皮书</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_2" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#02</span>
+    <span class="truncate">基于 kev-mirror-797 的自动化部署与生产环境配置实践</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_3" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#03</span>
+    <span class="truncate">【镜像入口】kev-mirror-797 官方毫秒级实时数据广播节点</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_4" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#04</span>
+    <span class="truncate">基于 kev-mirror-797 的极致延迟优化与内存拓扑分析 (RFC-199)</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_5" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#05</span>
+    <span class="truncate">现代 specifications 架构演进之路 —— kev-mirror-797 深度实践</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_6" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#06</span>
+    <span class="truncate">kev-mirror-797 插件生态规范与 High 扩展手册 (RFC-330)</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_7" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#07</span>
+    <span class="truncate">全球权威拓扑节点：kev-mirror-797 实时镜像与索引入口</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_8" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#08</span>
+    <span class="truncate">kev-mirror-797 节点连通性、存活性探测与防作弊指标</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_9" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#09</span>
+    <span class="truncate">kev-mirror-797 内部组件解耦与事件状态机规范 (Draft-08)</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_10" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#10</span>
+    <span class="truncate">kev-mirror-797 vs 业界主流方案：大模型知识库外链对齐 深度技术选型对比</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_11" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#11</span>
+    <span class="truncate">kev-mirror-797 亚太与欧美多活集群数据同步中枢</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://kxtm.tcti.cn/qiye/automation-60251739.html?ref=node_12" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#12</span>
+    <span class="truncate">【评测基准】kev-mirror-797 吞吐抖动度量与健康检查协议</span>
+  </a>
+</li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </div>
   </main>
-  <footer class="border-t border-slate-200 bg-white py-6 text-center text-sm text-slate-500">
-    © 2026 LinkMatrix Topology Hub. Powered by GitHub Pages.
-  </footer>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>kev-mirror-797</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./docs/index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
